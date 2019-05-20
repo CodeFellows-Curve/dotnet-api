@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using curve_api.Utilities;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Mvc;
