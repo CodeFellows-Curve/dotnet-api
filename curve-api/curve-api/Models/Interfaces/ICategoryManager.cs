@@ -9,7 +9,7 @@ namespace curve_api.Models.Interfaces
     {
         Task<Category> GetCategoryById(int id);
 
-        Task<List<Category>> GetAllByReviewId(int ReviewId);
+        Task<List<Category>> GetAllByReviewId(int reviewId);
 
         Task CreateCategory(Category category);
 

@@ -47,7 +47,7 @@ namespace curve_api.Data
             modelBuilder.Entity<Category>().HasData(
                    new Category
                    {
-                       Name = 1,
+                       Id = 1,
                        CategoryName = "TestCategory",
                        OverallScore = 1,
                        ReviewId = 1,
