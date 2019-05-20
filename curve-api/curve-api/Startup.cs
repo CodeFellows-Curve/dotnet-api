@@ -51,6 +51,7 @@ namespace curve_api
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            
 
             // Swagger
             app.UseSwagger();
