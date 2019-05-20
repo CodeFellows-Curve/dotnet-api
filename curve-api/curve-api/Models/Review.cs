@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace curve_api.Database.Models
+namespace curve_api.Models
 {
     public class Review
     {
