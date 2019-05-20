@@ -1,5 +1,4 @@
 ﻿using curve_api.Database.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
