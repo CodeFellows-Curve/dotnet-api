@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace curve_api.Models.Interfaces
 {
-    interface ISubcategoryManager
+    interface ISubCategoryManager
     {
         Task<SubCategory> GetSubCategoryById(int id);
 
