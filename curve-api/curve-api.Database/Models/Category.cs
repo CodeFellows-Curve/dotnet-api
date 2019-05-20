@@ -9,7 +9,7 @@ namespace curve_api.Database.Models
         //Table
         public int Id { get; set; }
         public string CategoryName { get; set; }
-        public int OverAllScore { get; set; }
+        public int OverallScore { get; set; }
         public int ReviewId { get; set; }
         //Nav
         public Review Review { get; set; }
