@@ -13,6 +13,6 @@ namespace curve_api.Database.Models
         public int CategoryId { get; set; }
         //Nav
         public Category Category { get; set; }
-        public List<SubCategoryComments> SubCategoryComments { get; set; }
+        public List<SubCategoryComment> SubCategoryComments { get; set; }
     }
 }
