@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curve_api.Database.Models.Interfaces
+namespace curve_api.Models.Interfaces
 {
     interface ISubcategoryManager
     {
