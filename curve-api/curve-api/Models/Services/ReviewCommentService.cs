@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace curve_api.Models.Services
 {
-    class ReviewCommentService : IReviewCommentManager
+    public class ReviewCommentService : IReviewCommentManager
     {
         private readonly CurveDBContext _context;
 

@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 
 namespace curve_api.Models.Interfaces
 {
-    interface IReviewManager
+    public interface IReviewManager
     {
         Task<Review> GetReviewById(int id);
 
         Task<List<Review>> GetAllByIndividualId(int individualId);
+
+        Task<List<Review>> GetAllByIndividualId(int individualId, int lastReview);
 
         Task<List<Review>> GetAllByReviewDate(DateTime dateTime);
 

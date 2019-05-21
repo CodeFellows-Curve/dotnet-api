@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace curve_api.Models.Interfaces
 {
-    interface IReviewCommentManager
+    public interface IReviewCommentManager
     {
         Task<ReviewComment> GetReviewCommentById(int id);
 

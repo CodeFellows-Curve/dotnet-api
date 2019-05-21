@@ -1,76 +1,78 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using curve_api.Data;
-using curve_api.Models.Handlers;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
+﻿using curve_api.Data;
+using curve_api.Models.Interfaces;
+using curve_api.Models.Services;
+using curve_api.Queries;
+using curve_api.Schema;
+using GraphiQl;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace curve_api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+		public IConfiguration Configuration { get; }
+		public IHostingEnvironment Environment { get; }
 
-        public IConfiguration Configuration { get; }
+		public Startup(IHostingEnvironment environment)
+		{
+			Environment = environment;
+			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+			builder.AddUserSecrets<Startup>();
+			Configuration = builder.Build();
+		}
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+			// Database connection strings
+			var connectionString_CurveDB = Environment.IsDevelopment()
+												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
+												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+
+			// Register DB context in services
+			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+
+            services.AddTransient<IIndividualManager, IndividualService>();
+            services.AddTransient<IReviewManager, ReviewService>();
+            services.AddTransient<ICategoryManager, CategoryService>();
+            services.AddTransient<ISubCategoryManager, SubCategoryService>();
+            services.AddTransient<IReviewCommentManager, ReviewCommentService>();
+            services.AddTransient<ICategoryCommentManager, CategoryCommentService>();
+            services.AddTransient<ISubCategoryCommentManager, SubCategoryCommentService>();
+
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+
+            services.AddSingleton<IndividualQuery>();
+
+            services.AddSingleton<Types.Individual.IndividualType>();
+            services.AddSingleton<Types.Review.ReviewType>();
+            services.AddSingleton<Types.Category.CategoryType>();
+            services.AddSingleton<Types.SubCategory.SubCategoryType>();
+            services.AddSingleton<Types.ReviewCommentType.ReviewCommentType>();
+            services.AddSingleton<Types.Category.CategoryType>();
+            services.AddSingleton<Types.SubCategoryCommentType.SubCategoryCommentType>();
+
+            services.AddSingleton<Types.Individual.IndividualInputType>();
+
+            var sp = services.BuildServiceProvider();
+            services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
-
-            string domain = $"https://{Configuration["Auth0:Domain"]}/";
-
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-            }).AddJwtBearer(options =>
-            {
-                options.Authority = domain;
-                options.Audience = Configuration["Auth0:AppIdentifier"];
-            });
-
-            string[] scopes = new string[]
-            {
-                // TODO: Add scopes here
-                "read:messages"
-            };
-
-            services.AddAuthorization(options =>
-            {
-                foreach (string scope in scopes)
-                {
-                    options.AddPolicy(scope, policy => policy.Requirements.Add(new HasScopeRequirement(scope, domain)));
-                }
-            });
-
-            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
-
-            services.AddDbContext<CurveDBContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,10 +88,10 @@ namespace curve_api
                 app.UseHsts();
             }
 
+            app.UseGraphiQl();
             app.UseHttpsRedirection();
-
-            app.UseAuthentication();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc();
+            
 
             // Swagger
             app.UseSwagger();
