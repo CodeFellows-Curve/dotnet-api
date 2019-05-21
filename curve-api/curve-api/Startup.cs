@@ -1,4 +1,5 @@
 ﻿using curve_api.Data;
+using curve_api.Models;
 using curve_api.Models.Interfaces;
 using curve_api.Models.Services;
 using curve_api.Queries;
@@ -8,6 +9,7 @@ using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -40,7 +42,6 @@ namespace curve_api
 												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
 			// Register DB context in services
-			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
 
             services.AddDbContext<CurveDBContext>(options =>
 options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
@@ -64,6 +65,13 @@ options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));
 
+            services.AddDbContext<CurveUserDbContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionStrings:CurveUserDb"]));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<CurveUserDbContext>()
+                .AddDefaultTokenProviders();
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -74,6 +82,8 @@ options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
