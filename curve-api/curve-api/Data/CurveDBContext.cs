@@ -11,7 +11,7 @@ namespace curve_api.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            int n = 0;
+            int n = 1;
             modelBuilder.Entity<Individual>().HasData(
                    new Individual
                    {
@@ -43,7 +43,7 @@ namespace curve_api.Data
                        PointsToNext = 1,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<Review>().HasData(
                    new Review
                    {
@@ -69,7 +69,7 @@ namespace curve_api.Data
                        OverallScore = 1,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<ReviewComment>().HasData(
                    new ReviewComment
                    {
@@ -125,7 +125,7 @@ namespace curve_api.Data
                        Content = "TestContent - Comment 2",
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<Category>().HasData(
                    new Category
                    {
@@ -319,7 +319,7 @@ namespace curve_api.Data
                        ReviewId = 3,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<CategoryComment>().HasData(
                    new CategoryComment
                    {
@@ -537,7 +537,7 @@ namespace curve_api.Data
                        Content = "TestContent - Review 3",
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<SubCategory>().HasData(
                    new SubCategory
                    {
@@ -1523,7 +1523,7 @@ namespace curve_api.Data
                        CategoryId = 24,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<SubCategoryComment>().HasData(
                   new SubCategoryComment
                   {
