@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using curve_api.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -17,20 +19,32 @@ namespace curve_api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+		public IConfiguration Configuration { get; }
+		public IHostingEnvironment Environment { get; }
 
-        public IConfiguration Configuration { get; }
+		public Startup(IHostingEnvironment environment)
+		{
+			Environment = environment;
+			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+			builder.AddUserSecrets<Startup>();
+			Configuration = builder.Build();
+		}
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen(c =>
+			// Database connection strings
+			var connectionString_CurveDB = Environment.IsDevelopment()
+												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
+												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+
+			// Register DB context in services
+			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+
+			// Register the Swagger generator, defining 1 or more Swagger documents
+			services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });

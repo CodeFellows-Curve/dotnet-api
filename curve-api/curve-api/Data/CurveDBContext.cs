@@ -8,6 +8,9 @@ namespace curve_api.Data
 {
     public class CurveDBContext : DbContext
     {
+		public CurveDBContext(DbContextOptions<CurveDBContext> options) : base(options)
+		{
+		}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -2633,7 +2636,9 @@ namespace curve_api.Data
 
                   });
         }
-        public DbSet<Individual> Individuals { get; set; }
+
+		// Set DB tables
+		public DbSet<Individual> Individuals { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ReviewComment> ReviewComments { get; set; }
         public DbSet<Category> Categories { get; set; }

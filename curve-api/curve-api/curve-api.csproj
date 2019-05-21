@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mutations\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
 
