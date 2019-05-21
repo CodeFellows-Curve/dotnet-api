@@ -3,6 +3,7 @@ using curve_api.Models.Interfaces;
 using curve_api.Models.Services;
 using curve_api.Queries;
 using curve_api.Schema;
+using GraphiQl;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
@@ -42,8 +43,6 @@ namespace curve_api
 			// Register DB context in services
 			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
 
-            services.AddDbContext<CurveDBContext>(options =>
-options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
             services.AddTransient<ICategoryManager, CategoryService>();
@@ -51,8 +50,11 @@ options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
             services.AddTransient<IReviewCommentManager, ReviewCommentService>();
             services.AddTransient<ICategoryCommentManager, CategoryCommentService>();
             services.AddTransient<ISubCategoryCommentManager, SubCategoryCommentService>();
+
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+
             services.AddSingleton<IndividualQuery>();
+
             services.AddSingleton<Types.Individual.IndividualType>();
             services.AddSingleton<Types.Review.ReviewType>();
             services.AddSingleton<Types.Category.CategoryType>();
@@ -60,7 +62,9 @@ options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
             services.AddSingleton<Types.ReviewCommentType.ReviewCommentType>();
             services.AddSingleton<Types.Category.CategoryType>();
             services.AddSingleton<Types.SubCategoryCommentType.SubCategoryCommentType>();
+
             services.AddSingleton<Types.Individual.IndividualInputType>();
+
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));
 
@@ -84,6 +88,7 @@ options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
                 app.UseHsts();
             }
 
+            app.UseGraphiQl();
             app.UseHttpsRedirection();
             app.UseMvc();
             
