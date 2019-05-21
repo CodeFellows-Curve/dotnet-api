@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace curve_api.Models.Services
 {
-    class ReviewService : IReviewManager
+    public class ReviewService : IReviewManager
     {
         private readonly CurveDBContext _context;
 
@@ -37,6 +37,14 @@ namespace curve_api.Models.Services
         public async Task<List<Review>> GetAllByIndividualId(int individualId)
         {
             return await _context.Reviews.Where(rv => rv.IndividualId == individualId).ToListAsync();
+        }
+
+        public async Task<List<Review>> GetAllByIndividualId(int individualId, int lastReview)
+        {
+            return await _context.Reviews.Where(rv => rv.IndividualId == individualId)
+                .OrderByDescending(x => x.ReviewDate)
+                .Take(lastReview)
+                .ToListAsync();
         }
 
         public async Task<List<Review>> GetAllByReviewDate(DateTime dateTime)
