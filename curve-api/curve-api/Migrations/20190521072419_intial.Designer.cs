@@ -10,8 +10,8 @@ using curve_api.Data;
 namespace curve_api.Migrations
 {
     [DbContext(typeof(CurveDBContext))]
-    [Migration("20190521064037_initial")]
-    partial class initial
+    [Migration("20190521072419_intial")]
+    partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

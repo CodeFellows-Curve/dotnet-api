@@ -37,7 +37,8 @@ namespace curve_api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
+            services.AddDbContext<CurveDBContext>(options => 
+            options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
 
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
