@@ -41,7 +41,7 @@ namespace curve_api.Data
                                {
                                    new Category
                                    {
-                                       CategoryName = "TestCategory",
+                                       CategoryName = "Business Acumen",
                                        OverallScore = 1,
 
                                        CategoryComment = new List<CategoryComment>
@@ -58,7 +58,7 @@ namespace curve_api.Data
                                        {
                                            new SubCategory
                                            {
-                                               SubCategoryName = "TestSubCategory",
+                                               SubCategoryName = "Mission and Vision",
                                                Score = 1,
 
                                                SubCategoryComments = new List<SubCategoryComment>
@@ -70,7 +70,23 @@ namespace curve_api.Data
                                                        Content = "TestContent",
                                                    }
                                                }
-                                           }
+                                           },
+
+                                           new SubCategory
+                                           {
+                                               SubCategoryName = "Customer Orientation",
+                                               Score = 1,
+
+                                               SubCategoryComments = new List<SubCategoryComment>
+                                               {
+                                                   new SubCategoryComment
+                                                   {
+                                                       UserId = 1,
+                                                       Subject = "TestSubject",
+                                                       Content = "TestContent",
+                                                   }
+                                               }
+                                           },
                                        }
                                    }
 
