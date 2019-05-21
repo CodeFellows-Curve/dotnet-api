@@ -1,20 +1,27 @@
-﻿using GraphQL.Types;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using curve_api.Models.Interfaces;
+using curve_api.Types.Review;
+using GraphQL.Types;
 
 namespace curve_api.Types.Individual
 {
     public class IndividualType : ObjectGraphType<Models.Individual>
     {
-        public IndividualType()
+        public IndividualType(IReviewManager reviewManager)
         {
             Field(x => x.Id);
             Field(x => x.Name);
             Field(x => x.CompetencyScore);
             Field(x => x.CurrentLevel);
             Field(x => x.PointsToNext);
+            Field<ListGraphType<ReviewType>>("payment",
+                arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "last" }),
+                resolve: context => {
+                    var lastItemsFilter = context.GetArgument<int?>("last");
+                    return lastItemsFilter != null
+                        ? reviewManager.GetAllByIndividualId(context.Source.Id, lastItemsFilter.Value)
+                        : reviewManager.GetAllByIndividualId(context.Source.Id);
+                });
         }
     }
 }
+

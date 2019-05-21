@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace curve_api.Models.Services
 {
-    class IndividualService : IIndividualManager
+    public class IndividualService : IIndividualManager
     {
         private readonly CurveDBContext _context;
 

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace curve_api.Models.Interfaces
 {
-    interface IIndividualManager
+    public interface IIndividualManager
     {
         Task<Individual> GetIndividualByIndividualID(int id);
 
