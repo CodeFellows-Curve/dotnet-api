@@ -8,7 +8,13 @@ namespace curve_api.Data
 {
     public class CurveDBContext : DbContext
     {
+        public CurveDBContext(DbContextOptions<CurveDBContext> options)
+            :base(options)
+        {
 
+        }
+
+        /*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -85,7 +91,9 @@ namespace curve_api.Data
                       Content = "TestContent",
 
                   });
+
         }
+        */
         public DbSet<Individual> Individuals { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ReviewComment> ReviewComments { get; set; }
