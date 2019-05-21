@@ -8,6 +8,9 @@ namespace curve_api.Data
 {
     public class CurveDBContext : DbContext
     {
+		public CurveDBContext(DbContextOptions<CurveDBContext> options) : base(options)
+		{
+		}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
