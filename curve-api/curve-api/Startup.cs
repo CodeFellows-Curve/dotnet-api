@@ -24,7 +24,7 @@ namespace curve_api
 
 		public Startup(IHostingEnvironment environment)
 		{
-			Environment = environment;
+			//Environment = environment;
 			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
 			builder.AddUserSecrets<Startup>();
 			Configuration = builder.Build();
@@ -33,15 +33,15 @@ namespace curve_api
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc();
 
 			// Database connection strings
-			var connectionString_CurveDB = Environment.IsDevelopment()
-												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
-												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+			//var connectionString_CurveDB = !Environment.IsDevelopment()
+			//									? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
+			//									: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
 			// Register DB context in services
-			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
 
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
