@@ -59,9 +59,9 @@ namespace curve_api
             services.AddSingleton<Types.Review.ReviewType>();
             services.AddSingleton<Types.Category.CategoryType>();
             services.AddSingleton<Types.SubCategory.SubCategoryType>();
-            services.AddSingleton<Types.ReviewCommentType.ReviewCommentType>();
+            services.AddSingleton<Types.ReviewComment.ReviewCommentType>();
             services.AddSingleton<Types.Category.CategoryType>();
-            services.AddSingleton<Types.SubCategoryCommentType.SubCategoryCommentType>();
+            services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentType>();
 
             services.AddSingleton<Types.Individual.IndividualInputType>();
 
