@@ -1,10 +1,10 @@
-﻿using curve_api.Database.Models;
+﻿using curve_api.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace curve_api.Database.Data
+namespace curve_api.Data
 {
     public class CurveDBContext : DbContext
     {
@@ -47,7 +47,7 @@ namespace curve_api.Database.Data
             modelBuilder.Entity<Category>().HasData(
                    new Category
                    {
-                       Name = 1,
+                       Id = 1,
                        CategoryName = "TestCategory",
                        OverallScore = 1,
                        ReviewId = 1,

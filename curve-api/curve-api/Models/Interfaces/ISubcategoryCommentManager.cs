@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curve_api.Database.Models.Interfaces
+namespace curve_api.Models.Interfaces
 {
-    interface ISubcategoryCommentManager
+    interface ISubCategoryCommentManager
     {
         Task<SubCategoryComment> GetSubCategoryCommentById(int id);
 
-        Task<List<SubCategoryComment>> GetAllBySubCategoryId(int categoryId);
+        Task<List<SubCategoryComment>> GetAllBySubCategoryId(int subCategoryId);
 
         Task CreateSubCategoryComment(SubCategoryComment subCategoryComment);
 

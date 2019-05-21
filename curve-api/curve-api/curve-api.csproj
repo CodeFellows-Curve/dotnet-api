@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>curve_api</RootNamespace>
+    <UserSecretsId>13ab5a78-4502-4b85-bfcd-68e2a3c494e5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
