@@ -8,6 +8,7 @@ namespace curve_api.Models
     {
         //Table
         public int Id { get; set; }
+        public string Email { get; set; }
         public string Name { get; set; }
         public int CompetencyScore { get; set; }
         public int CurrentLevel { get; set; }
