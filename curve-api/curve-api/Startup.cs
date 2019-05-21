@@ -40,6 +40,7 @@ namespace curve_api
 												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
 												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
+			// Register DB context in services
 			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
 
 			// Register the Swagger generator, defining 1 or more Swagger documents
