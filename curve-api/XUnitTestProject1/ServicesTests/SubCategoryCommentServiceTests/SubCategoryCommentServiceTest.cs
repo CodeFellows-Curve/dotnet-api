@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-using curve_api.Models;
 
-namespace XUnitTestProject1.ServicesTests
+namespace XUnitTestProject1.ServicesTests.SubCategoryCommentServiceTests
 {
-    public class UnitTest2
+    public class SubCategoryCommentServiceTest
     {
         [Fact]
         public void Test()
