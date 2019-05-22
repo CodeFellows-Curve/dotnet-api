@@ -6,78 +6,130 @@ using Xunit;
 using Microsoft.EntityFrameworkCore.InMemory;
 using curve_api.Data;
 using Microsoft.EntityFrameworkCore;
+using curve_api.Models;
+using System.Threading.Tasks;
 
 namespace XUnitTestProject1.ServicesTests.CategoryCommentServiceTests
 {
     public class CategoryCommentServiceTest
     {
         [Fact]
-        public void CanCreateCategoryComment()
+        public async Task CanCreateCategoryComment()
         {
             DbContextOptions<CurveDBContext> options = new DbContextOptionsBuilder<CurveDBContext>().UseInMemoryDatabase("CanCreateCategoryComment").Options;
 
             using (CurveDBContext context = new CurveDBContext(options))
             {
-                CategoryCommentService categoryCommentService = new CategoryCommentService()
+               CategoryComment comment = new CategoryComment()
                 {
-                    Id = 12,
+                    Id = 2000,
                     UserId = 5,
                     CategoryId = 6,
                     Subject = $"TestSubject - Category {6}",
-                    Content = "TestContent - Review 1",
+                    Content = "TestContent - Review 1"
                 };
+                CategoryCommentService commentService = new CategoryCommentService(context);
+                await commentService.CreateCategoryComment(comment);
+                CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
+                Assert.Equal("TestContent - Review 1", saved.Content);
             }
+        }
+
+        [Fact]
+        public async Task CanDeleteCategoryComment()
+        {
+            DbContextOptions<CurveDBContext> options = new DbContextOptionsBuilder<CurveDBContext>().UseInMemoryDatabase("CanDeleteCategoryComment").Options;
+
+            using (CurveDBContext context = new CurveDBContext(options))
+            {
+                CategoryComment comment = new CategoryComment()
+                {
+                    Id = 2000,
+                    UserId = 5,
+                    CategoryId = 6,
+                    Subject = $"TestSubject - Category {6}",
+                    Content = "TestContent - Review 1"
+                };
+                CategoryCommentService commentService = new CategoryCommentService(context);
+                await commentService.CreateCategoryComment(comment);
+                await commentService.DeleteCategoryComment(2000);
+                CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
+                Assert.Null(saved);
+            }
+        }
+
+        [Fact]
+        public async Task<List<CategoryComment>> CanGetAllByCategoryId()
+        {
+            DbContextOptions<CurveDBContext> options = new DbContextOptionsBuilder<CurveDBContext>().UseInMemoryDatabase("CanGetAllByCategoryId").Options;
+
+            using (CurveDBContext context = new CurveDBContext(options))
+            {
+                CategoryComment comment = new CategoryComment()
+                {
+                    Id = 9001,
+                    UserId = 5,
+                    CategoryId = 6,
+                    Subject = $"TestSubject - Category {6}",
+                    Content = "TestContent - Review 1"
+                };
+                CategoryCommentService commentService = new CategoryCommentService(context);
+                await commentService.CreateCategoryComment(comment);
+                await commentService.GetAllByCategoryId(9001);
+                CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
+                Assert.NotNull(saved);
+            }
+            return null;
+        }
+
+        [Fact]
+        public async Task<List<CategoryComment>> CanGetCategoryCommentById()
+        {
+            DbContextOptions<CurveDBContext> options = new DbContextOptionsBuilder<CurveDBContext>().UseInMemoryDatabase("CanGetCategoryCommentById").Options;
+
+            using (CurveDBContext context = new CurveDBContext(options))
+            {
+                CategoryComment comment = new CategoryComment()
+                {
+                    Id = 001,
+                    UserId = 5,
+                    CategoryId = 6,
+                    Subject = $"TestSubject - Category {6}",
+                    Content = "TestContent - Review 1"
+                };
+                CategoryCommentService commentService = new CategoryCommentService(context);
+                await commentService.CreateCategoryComment(comment);
+                await commentService.GetCategoryCommentById(001);
+                CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
+                Assert.NotNull(saved);
+            }
+            return null;
+        }
+
+        [Fact]
+        public async Task<List<CategoryComment>> CanUpdateCategoryComment()
+        {
+            DbContextOptions<CurveDBContext> options = new DbContextOptionsBuilder<CurveDBContext>().UseInMemoryDatabase("CanUpdateCategoryComment").Options;
+
+            using (CurveDBContext context = new CurveDBContext(options))
+            {
+                CategoryComment comment = new CategoryComment()
+                {
+                    Id = 001,
+                    UserId = 5,
+                    CategoryId = 6,
+                    Subject = $"TestSubject - Category {6}",
+                    Content = "TestContent - Review 1"
+                };
+                CategoryCommentService commentService = new CategoryCommentService(context);
+                await commentService.CreateCategoryComment(comment);
+                await commentService.UpdateCategoryComment();
+                CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
+                Assert.NotNull(saved);
+            }
+            return null;
         }
     }
 }
 
-
-//[Fact]
-//public static async Task TestFindBasketByUserLazy()
-//{
-//    DbContextOptions<ProductDBContext> options = new DbContextOptionsBuilder<ProductDBContext>().UseInMemoryDatabase("TestFindBasketByUserLazy").Options;
-
-//    using (ProductDBContext context = new ProductDBContext(options))
-//    {
-
-//        Product product = new Product()
-//        {
-//            ID = 0,
-//            Sku = "Test/Sku/Test",
-//            Name = "TestProduct",
-//            Description = "TestProduct",
-//            Price = 1.00m,
-//            Image = "TestImage"
-//        };
-//        context.Add(product);
-
-//        Basket basket = new Basket
-//        {
-//            ID = 0,
-//            UserName = "TestBasket",
-//            Subtotal = 2.00m,
-//            BasketItems = new List<BasketItem>()
-//        };
-//        context.Add(basket);
-
-//        BasketItem basketItem = new BasketItem
-//        {
-//            BasketID = basket.ID,
-//            ProductID = product.ID,
-//            Quantity = 2,
-//            Product = product,
-//            Basket = basket,
-
-//        };
-//        context.Add(basketItem);
-
-//        context.SaveChanges();
-
-//        BasketService bs = new BasketService(context);
-
-//        Basket test = await bs.FindBasketByUserLazy("TestBasket");
-
-//        Assert.Equal(2, test.Subtotal);
-//    }
-//}
 
