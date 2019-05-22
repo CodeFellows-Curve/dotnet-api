@@ -14,6 +14,7 @@ namespace curve_api.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region seededData
             int n = 1;
             modelBuilder.Entity<Individual>().HasData(
                    new Individual
@@ -2635,10 +2636,12 @@ namespace curve_api.Data
                       Content = "TestContent - Review 3",
 
                   });
+
+            #endregion
         }
 
-		// Set DB tables
-		public DbSet<Individual> Individuals { get; set; }
+        // Set DB tables
+        public DbSet<Individual> Individuals { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ReviewComment> ReviewComments { get; set; }
         public DbSet<Category> Categories { get; set; }
