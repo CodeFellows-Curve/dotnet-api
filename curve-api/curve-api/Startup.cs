@@ -40,7 +40,7 @@ namespace curve_api
 												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
 			// Register DB context in services
-			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+			//services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
 
             services.AddDbContext<CurveDBContext>(options =>
 options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
@@ -85,7 +85,7 @@ options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
             
 
             // Swagger
