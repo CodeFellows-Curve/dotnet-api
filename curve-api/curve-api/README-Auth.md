@@ -67,7 +67,7 @@ render page
 
 
 currently with the most up to date versioning of graphQL, It is currently not possible to add a policy to input objects using schema first approach, which is the implementation that is required in order to integrate graphQL with the back end.
-this ended the implementation of Auth0 where we could not keep the access token persistent long enough to verify the user, and verify the request. this is not a viable solution because hackers can spoof an email and access another users info
+this ended the implementation of Auth0 where we could not keep the access token persistent long enough to verify the user, and verify the request. this is not a viable solution because hackers can spoof an email and access another users data
 
 
 ### What we are doing now:
