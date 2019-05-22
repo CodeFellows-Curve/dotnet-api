@@ -54,10 +54,20 @@ namespace curve_api.Models.Services
         }
 
         /// <summary>
+        /// Gets Individual by individual Email
+        /// </summary>
+        /// <param name="email">The email of the given individual</param>
+        /// <returns>An Individual Entity</returns>
+        public async Task<Individual> GetIndividualByEmail(string email)
+        {
+            return await _context.Individuals.FindAsync(email);
+        }
+
+        /// <summary>
         /// Gets Individual by individual Id
         /// </summary>
         /// <param name="id">The id of the given individual</param>
-        /// <returns>A list of Review Entities</returns>
+        /// <returns>An Individual Entity</returns>
         public async Task<Individual> GetIndividualByIndividualID(int id)
         {
             return await _context.Individuals.FindAsync(id);
@@ -67,7 +77,7 @@ namespace curve_api.Models.Services
         /// Gets Individual by name
         /// </summary>
         /// <param name="name">the name of the given Individual</param>
-        /// <returns>The Individual</returns>
+        /// <returns>An Individual Entity</returns>
         public async Task<Individual> GetIndividualByName(string name)
         {
             return await _context.Individuals.Where(ind => ind.Name == name).FirstOrDefaultAsync();
