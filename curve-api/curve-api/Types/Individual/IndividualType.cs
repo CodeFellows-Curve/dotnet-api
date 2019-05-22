@@ -13,7 +13,7 @@ namespace curve_api.Types.Individual
             Field(x => x.CompetencyScore);
             Field(x => x.CurrentLevel);
             Field(x => x.PointsToNext);
-            Field<ListGraphType<ReviewType>>("payment",
+            Field<ListGraphType<ReviewType>>("review",
                 arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "last" }),
                 resolve: context => {
                     var lastItemsFilter = context.GetArgument<int?>("last");

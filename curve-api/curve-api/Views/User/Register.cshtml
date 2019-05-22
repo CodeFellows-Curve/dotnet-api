@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_layout";
+}
+
+<!-- Register layout taken from https://mdbootstrap.com/docs/jquery/forms/basic/ -->
+<form class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Sign up</p>
+
+    <div class="form-row mx-auto my-4" style="width: 500px">
+        <div class="col">
+            <!-- First name -->
+            <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+            <!-- Last name -->
+            <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+        </div>
+    </div>
+
+    <!-- E-mail -->
+    <input type="email" id="defaultRegisterFormEmail" class="form-control mx-auto my-4" style="width: 500px" placeholder="E-mail">
+
+    <!-- Password -->
+    <input type="password" id="defaultRegisterFormPassword" class="form-control mx-auto my-4" style="width: 500px" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mx-auto my-4" style="width: 500px">
+        At least 8 characters and 1 digit
+    </small>
+
+    <!-- Sign up button -->
+    <button class="btn btn-info btn-block mx-auto my-4" style="width: 350px" type="submit">Sign in</button>
+
+    <hr>
+    <p>
+        Already a member?
+        <a asp-action="Login">Login</a>
+    </p>
+
+
+</form>

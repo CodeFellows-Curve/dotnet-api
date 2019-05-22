@@ -1,33 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using curve_api.Data;
+using curve_api.Models;
+using curve_api.Models.Interfaces;
+using curve_api.Models.Services;
+using curve_api.Queries;
+using curve_api.Schema;
+using GraphiQl;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace curve_api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+		public IConfiguration Configuration { get; }
+		public IHostingEnvironment Environment { get; }
 
-        public IConfiguration Configuration { get; }
+		public Startup(IHostingEnvironment environment)
+		{
+			//Environment = environment;
+			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+			builder.AddUserSecrets<Startup>();
+			Configuration = builder.Build();
+		}
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc();
+
+			// Database connection strings
+			//var connectionString_CurveDB = !Environment.IsDevelopment()
+			//									? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
+			//									: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+
+			// Register DB context in services
+
+			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
+
+            services.AddTransient<IIndividualManager, IndividualService>();
+            services.AddTransient<IReviewManager, ReviewService>();
+            services.AddTransient<ICategoryManager, CategoryService>();
+            services.AddTransient<ISubcategoryManager, SubCategoryService>();
+            services.AddTransient<IReviewCommentManager, ReviewCommentService>();
+            services.AddTransient<ICategoryCommentManager, CategoryCommentService>();
+            services.AddTransient<ISubCategoryCommentManager, SubCategoryCommentService>();
+
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+
+            services.AddSingleton<IndividualQuery>();
+
+            services.AddSingleton<Types.Individual.IndividualType>();
+            services.AddSingleton<Types.Review.ReviewType>();
+            services.AddSingleton<Types.Category.CategoryType>();
+            services.AddSingleton<Types.SubCategory.SubCategoryType>();
+            services.AddSingleton<Types.ReviewComment.ReviewCommentType>();
+            services.AddSingleton<Types.CategoryComment.CategoryCommentType>();
+            services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentType>();
+
+            services.AddSingleton<Types.Individual.IndividualInputType>();
+
+            var sp = services.BuildServiceProvider();
+            services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));
+
+            services.AddDbContext<CurveUserDbContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionStrings:CurveUserDb"]));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<CurveUserDbContext>()
+                .AddDefaultTokenProviders();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -39,6 +88,8 @@ namespace curve_api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -49,8 +100,9 @@ namespace curve_api
                 app.UseHsts();
             }
 
+            app.UseGraphiQl();
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
             
 
             // Swagger

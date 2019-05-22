@@ -8,10 +8,14 @@ namespace curve_api.Data
 {
     public class CurveDBContext : DbContext
     {
+		public CurveDBContext(DbContextOptions<CurveDBContext> options) : base(options)
+		{
+		}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            int n = 0;
+            #region seededData
+            int n = 1;
             modelBuilder.Entity<Individual>().HasData(
                    new Individual
                    {
@@ -43,7 +47,7 @@ namespace curve_api.Data
                        PointsToNext = 1,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<Review>().HasData(
                    new Review
                    {
@@ -69,7 +73,7 @@ namespace curve_api.Data
                        OverallScore = 1,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<ReviewComment>().HasData(
                    new ReviewComment
                    {
@@ -125,7 +129,7 @@ namespace curve_api.Data
                        Content = "TestContent - Comment 2",
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<Category>().HasData(
                    new Category
                    {
@@ -319,225 +323,225 @@ namespace curve_api.Data
                        ReviewId = 3,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<CategoryComment>().HasData(
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 1",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    },
                    new CategoryComment
                    {
-                       Id = n++,
+                       Id = n,
                        UserId = 1,
-                       CategoryId = n,
-                       Subject = $"TestSubject - Category {n}",
+                       CategoryId = n++,
+                       Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<SubCategory>().HasData(
                    new SubCategory
                    {
@@ -1523,1116 +1527,1120 @@ namespace curve_api.Data
                        CategoryId = 24,
 
                    });
-            n = 0;
+            n = 1;
             modelBuilder.Entity<SubCategoryComment>().HasData(
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   },
                   new SubCategoryComment
                   {
-                      Id = n++,
+                      Id = n,
                       UserId = 1,
-                      SubCategoryId = n,
-                      Subject = $"TestSubject - SubCategory {n}",
+                      SubCategoryId = n++,
+                      Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
 
                   });
+
+            #endregion
         }
+
+        // Set DB tables
         public DbSet<Individual> Individuals { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ReviewComment> ReviewComments { get; set; }
