@@ -25,7 +25,7 @@ this means we cannot persist the tokens, and we cannot facilitate authorization 
 
 ### Direct issues
 
-[image of known solution proof on github ](assets/GithubKnownIssue.JPG)
+![image of known solution proof on github ](assets/GithubKnownIssue.JPG)
 see https://github.com/graphql-dotnet/authorization
 - CANNOT use graphQL and a form of authentication through auth0
 - MUST validate access token with Auth0 for a x amount of time. reoccurring, every request is different token - no persistence == the idea of renewing the token often increases security immensely
@@ -35,7 +35,7 @@ see https://github.com/graphql-dotnet/authorization
 - Don't use graphQL with authentication
 - Don't use gatsby with graphQL
 - use seperate routing for OAuth instead of using Auth0 to mitigate the whole thing
-####- It is currently not possible to add a policy to input objects using schema first approach (schema first uses graphQL authorize) dependant! don’t work!
+####- It is currently not possible to add a policy to input objects using schema first approach (schema first uses graphQL authorize) dependant! donâ€™t work!
 - Cannot send user information over http requests (security vulnerability)
 
 ### What we were trying to do first:
@@ -78,5 +78,5 @@ wanted, we would also like to implement OAuth for github.
 
 once graphQL gets a version update retry the implementation
 
-[image of known solution proof on github ](assets/MediumBlog.JPG)
+![image of known solution proof on github ](assets/MediumBlog.JPG)
 https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b
