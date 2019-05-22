@@ -10,23 +10,23 @@ namespace XUnitTestProject1.GetSetTests.ReviewGetSetTests
     {
         //--------------Review Tests---------------------//
         //[Fact]
-        //public void CanGetReviewDateTime()
+        //public void CanGetReviewDate()
         //{
-        //    DateTime testTime = new DateTime();         
+        //    DateTime reviewTime = new DateTime();
 
-        //    Assert.Equal(1, testTime.DateTime);
+        //    Assert.Equal(1, reviewTime.ReviewDate);
         //}
 
         //[Fact]
-        //public void CanSetReviewDateTime()
+        //public void CanSetReviewDate()
         //{
-        //    DateTime testTime = new DateTime()
+        //    DateTime reviewTime = new DateTime()
         //    {
-        //        UserId = 1
+        //        ReviewDate = 1
         //    };
-        //    userId.Id = 2;
+        //    reviewTime.ReviewDate = 2;
 
-        //    Assert.Equal(2, userId.UserId);
+        //    Assert.Equal(2, reviewTime.ReviewDate);
         //}
 
         [Fact]
