@@ -46,7 +46,7 @@ namespace curve_api
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
             services.AddTransient<ICategoryManager, CategoryService>();
-            services.AddTransient<ISubCategoryManager, SubCategoryService>();
+            services.AddTransient<ISubcategoryManager, SubCategoryService>();
             services.AddTransient<IReviewCommentManager, ReviewCommentService>();
             services.AddTransient<ICategoryCommentManager, CategoryCommentService>();
             services.AddTransient<ISubCategoryCommentManager, SubCategoryCommentService>();
@@ -59,9 +59,9 @@ namespace curve_api
             services.AddSingleton<Types.Review.ReviewType>();
             services.AddSingleton<Types.Category.CategoryType>();
             services.AddSingleton<Types.SubCategory.SubCategoryType>();
-            services.AddSingleton<Types.ReviewCommentType.ReviewCommentType>();
-            services.AddSingleton<Types.Category.CategoryType>();
-            services.AddSingleton<Types.SubCategoryCommentType.SubCategoryCommentType>();
+            services.AddSingleton<Types.ReviewComment.ReviewCommentType>();
+            services.AddSingleton<Types.CategoryComment.CategoryCommentType>();
+            services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentType>();
 
             services.AddSingleton<Types.Individual.IndividualInputType>();
 

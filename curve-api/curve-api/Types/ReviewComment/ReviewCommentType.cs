@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GraphQL.Types;
 
-namespace curve_api.Types.ReviewCommentType
+namespace curve_api.Types.ReviewComment
 {
     public class ReviewCommentType : ObjectGraphType<Models.ReviewComment>
     {
