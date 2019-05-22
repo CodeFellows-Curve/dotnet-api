@@ -3,6 +3,7 @@ using curve_api.Models.Interfaces;
 using curve_api.Models.Services;
 using curve_api.Queries;
 using curve_api.Schema;
+using GraphiQl;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
@@ -23,7 +24,7 @@ namespace curve_api
 
 		public Startup(IHostingEnvironment environment)
 		{
-			Environment = environment;
+			//Environment = environment;
 			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
 			builder.AddUserSecrets<Startup>();
 			Configuration = builder.Build();
@@ -32,35 +33,38 @@ namespace curve_api
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc();
 
 			// Database connection strings
-			var connectionString_CurveDB = Environment.IsDevelopment()
-												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
-												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+			//var connectionString_CurveDB = !Environment.IsDevelopment()
+			//									? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
+			//									: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
 			// Register DB context in services
-			//services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
 
-            services.AddDbContext<CurveDBContext>(options =>
-options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
             services.AddTransient<ICategoryManager, CategoryService>();
-            services.AddTransient<ISubCategoryManager, SubCategoryService>();
+            services.AddTransient<ISubcategoryManager, SubCategoryService>();
             services.AddTransient<IReviewCommentManager, ReviewCommentService>();
             services.AddTransient<ICategoryCommentManager, CategoryCommentService>();
             services.AddTransient<ISubCategoryCommentManager, SubCategoryCommentService>();
+
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+
             services.AddSingleton<IndividualQuery>();
+
             services.AddSingleton<Types.Individual.IndividualType>();
             services.AddSingleton<Types.Review.ReviewType>();
             services.AddSingleton<Types.Category.CategoryType>();
             services.AddSingleton<Types.SubCategory.SubCategoryType>();
-            services.AddSingleton<Types.ReviewCommentType.ReviewCommentType>();
-            services.AddSingleton<Types.Category.CategoryType>();
-            services.AddSingleton<Types.SubCategoryCommentType.SubCategoryCommentType>();
+            services.AddSingleton<Types.ReviewComment.ReviewCommentType>();
+            services.AddSingleton<Types.CategoryComment.CategoryCommentType>();
+            services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentType>();
+
             services.AddSingleton<Types.Individual.IndividualInputType>();
+
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));
 
@@ -84,6 +88,7 @@ options.UseSqlServer(Configuration["ConnectionStrings:CurveDB"]));
                 app.UseHsts();
             }
 
+            app.UseGraphiQl();
             app.UseHttpsRedirection();
             app.UseMvcWithDefaultRoute();
             

@@ -33,8 +33,10 @@ namespace curve_api.Models.Services
 
         public async Task<List<CategoryComment>> GetAllByCategoryId(int categoryId)
         {
-            var allComments = await _context.CategoryComments.Where(i => i.Id == categoryId).ToListAsync();
-            return allComments;
+            //var allComments =
+                
+                return await _context.CategoryComments.Where(i => i.Id == categoryId).ToListAsync();
+            //return allComments;
 
         }
 
