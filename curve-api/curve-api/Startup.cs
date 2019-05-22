@@ -102,7 +102,7 @@ namespace curve_api
 
             app.UseGraphiQl();
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
             
 
             // Swagger
