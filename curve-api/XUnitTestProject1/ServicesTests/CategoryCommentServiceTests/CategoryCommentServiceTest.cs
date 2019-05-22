@@ -75,9 +75,9 @@ namespace XUnitTestProject1.ServicesTests.CategoryCommentServiceTests
                 };
                 CategoryCommentService commentService = new CategoryCommentService(context);
                 await commentService.CreateCategoryComment(comment);
-                await commentService.GetAllByCategoryId(9001);
+                await commentService.GetAllByCategoryId(comment.CategoryId);
                 CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
-                Assert.NotNull(saved);
+                Assert.Equal("TestContent - Review 1", saved.Content);
             }
             return null;
         }
@@ -101,7 +101,7 @@ namespace XUnitTestProject1.ServicesTests.CategoryCommentServiceTests
                 await commentService.CreateCategoryComment(comment);
                 await commentService.GetCategoryCommentById(001);
                 CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
-                Assert.NotNull(saved);
+                Assert.Equal("TestContent - Review 1", saved.Content);
             }
             return null;
         }
@@ -123,9 +123,18 @@ namespace XUnitTestProject1.ServicesTests.CategoryCommentServiceTests
                 };
                 CategoryCommentService commentService = new CategoryCommentService(context);
                 await commentService.CreateCategoryComment(comment);
-                await commentService.UpdateCategoryComment();
+                comment.Content = "testing of all tests";
+                //CategoryComment comment2 = new CategoryComment()
+                //{
+                //    Id = 001,
+                //    UserId = 5,
+                //    CategoryId = 6,
+                //    Subject = $"TestSubject - Category {6}",
+                //    Content = "another test"
+                //};
+                await commentService.UpdateCategoryComment(comment);
                 CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
-                Assert.NotNull(saved);
+                Assert.Equal("testing of all tests", comment.Content);
             }
             return null;
         }
