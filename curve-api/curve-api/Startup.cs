@@ -60,7 +60,7 @@ namespace curve_api
             services.AddSingleton<Types.Category.CategoryType>();
             services.AddSingleton<Types.SubCategory.SubCategoryType>();
             services.AddSingleton<Types.ReviewComment.ReviewCommentType>();
-            services.AddSingleton<Types.Category.CategoryType>();
+            services.AddSingleton<Types.CategoryComment.CategoryCommentType>();
             services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentType>();
 
             services.AddSingleton<Types.Individual.IndividualInputType>();

@@ -10,7 +10,7 @@ namespace curve_api.Types.SubCategory
 {
     public class SubCategoryType : ObjectGraphType<Models.SubCategory>
     {
-        public SubCategoryType(ISubCategoryManager subCategory)
+        public SubCategoryType(ISubCategoryCommentManager subCategoryComment)
         {
             Field(x => x.Id);
             Field(x => x.SubCategoryName);
@@ -20,7 +20,7 @@ namespace curve_api.Types.SubCategory
                 arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "last" }),
                 resolve: context => {
                     var lastItemsFilter = context.GetArgument<int?>("last");
-                    return subCategory.GetAllByCategoryId(context.Source.Id);
+                    return subCategoryComment.GetAllBySubCategoryId(context.Source.Id);
                 });
         }
     }

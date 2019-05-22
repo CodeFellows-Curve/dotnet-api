@@ -32,7 +32,7 @@ namespace curve_api.Models.Services
 
         public async Task<List<Category>> GetAllByReviewId(int reviewId)
         {
-            var reviews = await _context.Categories.Where(i => i.Id == reviewId).ToListAsync();
+            var reviews = await _context.Categories.Where(i => i.ReviewId == reviewId).ToListAsync();
             return reviews;
         }
 
