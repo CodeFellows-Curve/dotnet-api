@@ -65,7 +65,7 @@ namespace XUnitTestProject1.ServicesTests.CategoryServiceTests
                 Category kittyCat = new Category()
                 {
                     Id = 123,
-                    CategoryName = "Business Acumen",
+                    CategoryName = "Growth Mindset",
                     OverallScore = 1,
                     ReviewId = 19,
                 };
@@ -73,7 +73,7 @@ namespace XUnitTestProject1.ServicesTests.CategoryServiceTests
                 await kittyCatService.CreateCategory(kittyCat);
                 await kittyCatService.GetAllByReviewId(kittyCat.ReviewId);
                 Category saved = await context.Categories.FirstOrDefaultAsync();
-                Assert.Equal("Business Acumen", saved.CategoryName);
+                Assert.Equal("Growth Mindset", saved.CategoryName);
             }
             return null;
         }
@@ -88,7 +88,7 @@ namespace XUnitTestProject1.ServicesTests.CategoryServiceTests
                 Category kittyCat = new Category()
                 {
                     Id = 123,
-                    CategoryName = "Business Acumen",
+                    CategoryName = "Leadership",
                     OverallScore = 1,
                     ReviewId = 19,
                 };
@@ -96,7 +96,7 @@ namespace XUnitTestProject1.ServicesTests.CategoryServiceTests
                 await kittyCatService.CreateCategory(kittyCat);
                 await kittyCatService.GetCategoryById(123);
                 Category saved = await context.Categories.FirstOrDefaultAsync();
-                Assert.Equal("Business Acumen", saved.CategoryName);
+                Assert.Equal("Leadership", saved.CategoryName);
             }
             return null;
         }
@@ -111,16 +111,16 @@ namespace XUnitTestProject1.ServicesTests.CategoryServiceTests
                 Category kittyCat = new Category()
                 {
                     Id = 123,
-                    CategoryName = "Business Acumen",
+                    CategoryName = "Quality",
                     OverallScore = 1,
                     ReviewId = 19,
                 };
                 CategoryService kittyCatService = new CategoryService(context);
                 await kittyCatService.CreateCategory(kittyCat);
-                kittyCat.CategoryName = "Business Acumen";            
+                kittyCat.CategoryName = "Quality";            
                 await kittyCatService.UpdateCategory(kittyCat);
                 CategoryComment saved = await context.CategoryComments.FirstOrDefaultAsync();
-                Assert.Equal("Business Acumen", kittyCat.CategoryName);
+                Assert.Equal("Quality", kittyCat.CategoryName);
             }
             return null;
         }
