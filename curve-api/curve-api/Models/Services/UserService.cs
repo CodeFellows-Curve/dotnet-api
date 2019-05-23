@@ -22,12 +22,12 @@ namespace curve_api.Models.Services
             User user = new User()
             {
                 Email = email,
-                Key = email.Sum(x => x).ToString()
+                Key = Guid.NewGuid().ToString()
             };
 
             if (email.Contains("@codefellows.com") || email.Contains("andrew.l.roska"))
             {
-                user.Role = "SuperUser";
+                user.Role = "Admin";
             }
             else
             {

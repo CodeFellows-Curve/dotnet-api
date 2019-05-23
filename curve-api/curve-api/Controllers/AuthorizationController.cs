@@ -24,9 +24,10 @@ namespace curve_api.Controllers
         [HttpGet("{email}")]
         public async Task<IActionResult> GetAsync(string email)
         {
-            if (await _user.UserExists(email.ToLower()))
+            User user = await _user.GetUser(email.ToLower());
+            if (user != null)
             {
-                return Ok(await _user.GetUser(email.ToLower()));
+                return Ok(user);
             }
             else
             {
