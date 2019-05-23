@@ -2,6 +2,7 @@
 using curve_api.Models;
 using curve_api.Models.Interfaces;
 using curve_api.Models.Services;
+using curve_api.Mutations;
 using curve_api.Queries;
 using curve_api.Schema;
 using GraphiQl;
@@ -67,6 +68,20 @@ namespace curve_api
             services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentType>();
 
             services.AddSingleton<Types.Individual.IndividualInputType>();
+            services.AddSingleton<Types.Review.ReviewInputType>();
+            services.AddSingleton<Types.Category.CategoryInputType>();
+            services.AddSingleton<Types.SubCategory.SubCategoryInputType>();
+            services.AddSingleton<Types.ReviewComment.ReviewCommentInputType>();
+            services.AddSingleton<Types.CategoryComment.CategoryCommentInputType>();
+            services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentInputType>();
+
+            services.AddSingleton<Mutation>();
+            services.AddSingleton<ReviewMutation>();
+            services.AddSingleton<CategoryMutation>();
+            services.AddSingleton<SubCategoryMutation>();
+            services.AddSingleton<ReviewCommentsMutation>();
+            services.AddSingleton<CategoryCommentMutation>();
+            services.AddSingleton<SubCategoryCommentMutation>();
 
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));

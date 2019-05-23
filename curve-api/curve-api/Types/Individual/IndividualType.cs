@@ -9,6 +9,7 @@ namespace curve_api.Types.Individual
         public IndividualType(IReviewManager reviewManager)
         {
             Field(x => x.Id);
+            Field(x => x.Email);
             Field(x => x.Name);
             Field(x => x.CompetencyScore);
             Field(x => x.CurrentLevel);
