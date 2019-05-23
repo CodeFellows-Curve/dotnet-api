@@ -570,7 +570,7 @@ namespace curve_api.Data
                    new SubCategory
                    {
                        Id = n++,
-                       SubCategoryName = "Curiousity",
+                       SubCategoryName = "Curiosity",
                        Score = 1,
                        CategoryId = 2,
 
