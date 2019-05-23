@@ -8,6 +8,7 @@ namespace curve_api.Types.Individual
         {
             Field<StringGraphType>("Email");
             Field<NonNullGraphType<StringGraphType>>("name");
+            Field<StringGraphType>("email");
             Field<IntGraphType>("CompetencyScore");
             Field<IntGraphType>("CurrentLevel");
             Field<IntGraphType>("PointsToNext");

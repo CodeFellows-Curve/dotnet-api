@@ -83,8 +83,8 @@ namespace curve_api.Models.Services
         {
             return await _context.Individuals.Where(ind => ind.Name == name).FirstOrDefaultAsync();
         }
-
-        /// <summary>
+        
+        // <summary>
         /// Updates a specific Individual Entity in the database
         /// </summary>
         /// <param name="individual">The Individual being updated</param>
