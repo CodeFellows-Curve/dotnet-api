@@ -10,7 +10,7 @@ namespace curve_api.Schema
             :base(resolver)
         {
             Query = resolver.Resolve<IndividualQuery>();
-            Mutation = resolver.Resolve<IndividualMutation>();
+            Mutation = resolver.Resolve<Mutation>();
         }
     }
 }

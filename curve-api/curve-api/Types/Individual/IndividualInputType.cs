@@ -6,10 +6,11 @@ namespace curve_api.Types.Individual
     {
         public IndividualInputType()
         {
+            Field<StringGraphType>("email");
             Field<NonNullGraphType<StringGraphType>>("name");
-            Field<IntGraphType>("CompetencyScore");
-            Field<IntGraphType>("CurrentLevel");
-            Field<IntGraphType>("PointsToNext");
+            Field<IntGraphType>("competencyScore");
+            Field<IntGraphType>("currentLevel");
+            Field<IntGraphType>("pointsToNext");
         }
     }
 }
