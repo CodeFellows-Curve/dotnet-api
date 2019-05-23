@@ -137,8 +137,8 @@ https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b
 Explains what our problem is and why it exists.
 ## Docs Referenced (links)
 
-* [Auth Resource 1:]()
-* [Auth Resource 2:]()
+* [Auth Resource 1:](https://auth0.com/docs)
+* [Auth Resource 2:](https://auth0.com/docs/quickstart/backend/aspnet-core-webapi)
 * [GraphQL Resource 1: https://graphql-dotnet.github.io/docs/getting-started/introduction/](https://graphql-dotnet.github.io/docs/getting-started/introduction/)
 * [GraphQL Resource 2: https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b](https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b)
 
