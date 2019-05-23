@@ -40,12 +40,6 @@ maximize security
 * [Here's a link](http://someurl.link)
 
 
-## How to run locally
-
-
-the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox 
-
-
 ## Frameworks and Tools Used
 
 .NET Core 
@@ -79,25 +73,29 @@ The current functionality is that the front end will handle the retriveal of the
 ## Known bugs 
 
 #### Existing limitations, etc
-
-
-the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox 
+Cannot send user information over http requests (security vulnerability)
+- CANNOT use graphQL and a form of authentication through auth0
+- MUST validate access token with Auth0 for a x amount of time. reoccurring, every request is different token - no persistence == the idea of renewing the token often increases security immensely
 
 
 ## Tasks remaining 
 
+Adding more roles to facilitate more or less accessibility per user.
+If we were not using GraphQL or this project was in one repo most of the issues are solved
+
 #### TODOs
 
 
-the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox 
-
+increase security for authorization for the data retrieval for the front end
 
 ## Recomendations for future development
 
 
-the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox the quick brown fox 
+look into this doc
+[image of known solution proof on github ](assets/MediumBlog.JPG)
+https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b
 
-
+Explains what our problem is and why it exists.
 ## Docs Referenced (links)
 
 
@@ -113,7 +111,8 @@ the quick brown fox the quick brown fox the quick brown fox the quick brown fox 
 ***
 
 footnotes
-<iframe src="https://github.com/CodeFellows-Curve/dotnet-api/blob/pre-staging/curve-api/curve-api/README-Auth.md"> RAW DOCUMENTATION</iframe>
+# RAW DOCUMENTATION PLEASE READ!
+https://github.com/CodeFellows-Curve/dotnet-api/blob/pre-staging/curve-api/curve-api/README-Auth.md
 
 
 <!-- Lengthy lists of things? Use: -->
