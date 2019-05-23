@@ -99,6 +99,10 @@ $ git clone [https://github.com]
 ![Backend UML](./assets/BackendUML.png)
 
 
+#### 5-Way Handshake UML
+![5-Way Handshake](https://github.com/CodeFellows-Curve/dotnet-api/blob/pre-staging/assets/5wayhandshakeuml.png)
+
+
 ## Process flow
 
 #### Auth Team
@@ -158,11 +162,10 @@ look into GraphQL Resource #2, heavily.
 
 ## Docs Referenced (links)
 
-* [Auth Resource #1:]()
-* [Auth Resource #2:]()
+* [Auth Resource #1:](https://auth0.com/docs)
+* [Auth Resource #2:](https://auth0.com/docs/quickstart/backend/aspnet-core-webapi)
 * [GraphQL Resource #1](https://graphql-dotnet.github.io/docs/getting-started/introduction/)
 * [GraphQL Resource #2](https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b)
-
 
 <!-- ##### SUB HEADERS -->
 <!--
