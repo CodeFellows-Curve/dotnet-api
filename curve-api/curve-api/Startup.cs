@@ -2,6 +2,7 @@
 using curve_api.Models;
 using curve_api.Models.Interfaces;
 using curve_api.Models.Services;
+using curve_api.Mutations;
 using curve_api.Queries;
 using curve_api.Schema;
 using GraphiQl;
@@ -26,7 +27,7 @@ namespace curve_api
 
 		public Startup(IHostingEnvironment environment)
 		{
-			//Environment = environment;
+			Environment = environment;
 			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
 			builder.AddUserSecrets<Startup>();
 			Configuration = builder.Build();
@@ -37,14 +38,20 @@ namespace curve_api
         {
             services.AddMvc();
 
-			// Database connection strings
-			//var connectionString_CurveDB = !Environment.IsDevelopment()
-			//									? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
-			//									: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+            // Database connection strings
+            var connectionString_CurveDB = Environment.IsDevelopment()
+                                                ? Configuration["ConnectionStrings:DefaultConnection_CurveDB"]
+                                                : Configuration["ConnectionStrings:DefaultConnection_CurveDB"];
 
-			// Register DB context in services
+            // Register DB context in services
 
-			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
+            //services.AddDbContext<CurveDBContext>(options => 
+            //    options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection_CurveDB"]));
+
+            services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+
+            //services.AddDbContext<CurveUserDbContext>(options =>
+            //    options.UseSqlServer(Configuration["ConnectionStrings:CurveUserDb"]));
 
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
@@ -67,12 +74,25 @@ namespace curve_api
             services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentType>();
 
             services.AddSingleton<Types.Individual.IndividualInputType>();
+            services.AddSingleton<Types.Review.ReviewInputType>();
+            services.AddSingleton<Types.Category.CategoryInputType>();
+            services.AddSingleton<Types.SubCategory.SubCategoryInputType>();
+            services.AddSingleton<Types.ReviewComment.ReviewCommentInputType>();
+            services.AddSingleton<Types.CategoryComment.CategoryCommentInputType>();
+            services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentInputType>();
+
+            services.AddSingleton<IndividualMutation>();
+            services.AddSingleton<ReviewMutation>();
+            services.AddSingleton<CategoryMutation>();
+            services.AddSingleton<SubCategoryMutation>();
+            services.AddSingleton<ReviewCommentsMutation>();
+            services.AddSingleton<CategoryCommentMutation>();
+            services.AddSingleton<SubCategoryCommentMutation>();
 
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));
 
-            services.AddDbContext<CurveUserDbContext>(options =>
-                options.UseSqlServer(Configuration["ConnectionStrings:CurveUserDb"]));
+            
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<CurveUserDbContext>()
