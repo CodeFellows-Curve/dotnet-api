@@ -22,7 +22,7 @@ namespace curve_api.Data
                        Id = n++,
                        Email = "Nate@Test.com",
                        Name = "Nate",
-                       CompetencyScore = 1,
+                       CompetencyScore = 3,
                        CurrentLevel = 1,
                        PointsToNext = 1,
 
@@ -32,7 +32,7 @@ namespace curve_api.Data
                        Id = n++,
                        Email = "Hannah@Test.com",
                        Name = "Hannah",
-                       CompetencyScore = 1,
+                       CompetencyScore = 2,
                        CurrentLevel = 2,
                        PointsToNext = 1,
 
@@ -40,11 +40,11 @@ namespace curve_api.Data
                    new Individual
                    {
                        Id = n++,
-                       Email = "TestOne@Test.com",
-                       Name = "TestOne",
+                       Email = "Caity@Test.com",
+                       Name = "Caity",
                        CompetencyScore = 1,
                        CurrentLevel = 1,
-                       PointsToNext = 1,
+                       PointsToNext = 3,
 
                    });
             n = 1;
@@ -62,7 +62,7 @@ namespace curve_api.Data
                        Id = n++,
                        ReviewDate = new DateTime(),
                        IndividualId = 2,
-                       OverallScore = 1,
+                       OverallScore = 3,
 
                    },
                    new Review
@@ -70,7 +70,7 @@ namespace curve_api.Data
                        Id = n++,
                        ReviewDate = new DateTime(),
                        IndividualId = 3,
-                       OverallScore = 1,
+                       OverallScore = 4,
 
                    });
             n = 1;
@@ -96,7 +96,7 @@ namespace curve_api.Data
                    new ReviewComment
                    {
                        Id = n++,
-                       UserId = 1,
+                       UserId = 2,
                        ReviewId = 2,
                        Subject = "TestSubject - Review 2",
                        Content = "TestContent - Comment 1",
@@ -105,7 +105,7 @@ namespace curve_api.Data
                    new ReviewComment
                    {
                        Id = n++,
-                       UserId = 1,
+                       UserId = 3,
                        ReviewId = 2,
                        Subject = "TestSubject - Review 2",
                        Content = "TestContent - Comment 2",
@@ -114,7 +114,7 @@ namespace curve_api.Data
                    new ReviewComment
                    {
                        Id = n++,
-                       UserId = 1,
+                       UserId = 2,
                        ReviewId = 3,
                        Subject = "TestSubject - Review 3",
                        Content = "TestContent - Comment 1",
@@ -454,7 +454,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 2,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
@@ -463,7 +463,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 2,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 2",
@@ -472,7 +472,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 2,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -481,7 +481,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 2,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -490,7 +490,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 2,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -499,7 +499,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 2,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -508,7 +508,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 3,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -517,7 +517,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 3,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -526,7 +526,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 3,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -535,7 +535,7 @@ namespace curve_api.Data
                    new CategoryComment
                    {
                        Id = n,
-                       UserId = 1,
+                       UserId = 3,
                        CategoryId = n++,
                        Subject = $"TestSubject - Category {n - 1}",
                        Content = "TestContent - Review 3",
@@ -547,7 +547,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mission and Vision",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 1,
 
                    },
@@ -555,7 +555,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Customer Orientation",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 1,
 
                    },
@@ -563,15 +563,15 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Adaptability",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 2,
 
                    },
                    new SubCategory
                    {
                        Id = n++,
-                       SubCategoryName = "Curiousity",
-                       Score = 1,
+                       SubCategoryName = "Curiosity",
+                       Score = 3,
                        CategoryId = 2,
 
                    },
@@ -579,7 +579,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Constant Improvement",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 2,
 
                    },
@@ -587,7 +587,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Handling Ambiguity",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 2,
 
                    },
@@ -595,7 +595,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Inclusivity",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 2,
 
                    },
@@ -603,7 +603,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Openness",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 2,
 
                    },
@@ -611,7 +611,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ambition and Initiative",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 2,
 
                    },
@@ -627,7 +627,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Integrity",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 3,
 
                    },
@@ -635,7 +635,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ownership",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 3,
 
                    },
@@ -643,7 +643,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mentorship",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 3,
 
                    },
@@ -659,7 +659,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Succession",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 3,
 
                    },
@@ -667,7 +667,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Health and Safety",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 3,
 
                    },
@@ -675,7 +675,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Confidence",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 3,
 
                    },
@@ -683,7 +683,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Credibility",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 3,
 
                    },
@@ -691,7 +691,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Technical",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 4,
 
                    },
@@ -699,7 +699,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Process",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 4,
 
                    },
@@ -707,7 +707,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Innovation",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 4,
 
                    },
@@ -715,7 +715,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Tool Proficiency",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 4,
 
                    },
@@ -723,7 +723,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Judgement",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 5,
 
                    },
@@ -731,7 +731,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Root Cause Resolution",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 5,
 
                    },
@@ -739,7 +739,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Writing",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 6,
 
                    },
@@ -747,7 +747,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Reading",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 6,
 
                    },
@@ -763,7 +763,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Listening",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 6,
 
                    },
@@ -771,7 +771,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Collaboration",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 7,
 
                    },
@@ -779,7 +779,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Agile",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 8,
 
                    },
@@ -787,7 +787,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Organizational",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 8,
 
                    },
@@ -795,7 +795,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Creative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 8,
 
                    },
@@ -803,7 +803,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Project Execution",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 8,
 
                    },
@@ -811,7 +811,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Analytical Thinking",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 8,
 
                    },
@@ -819,7 +819,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Prioritization",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 8,
 
                    },
@@ -827,7 +827,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Problem Solving",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 8,
 
                    },
@@ -835,7 +835,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Incremental Delivery",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 8,
 
                    },
@@ -843,7 +843,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Decision Making",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 8,
 
                    },
@@ -851,7 +851,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Appropriate Autonomy",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 8,
 
                    },
@@ -859,7 +859,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Planning and Estimating",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 8,
 
                    },
@@ -875,7 +875,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mission and Vision",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 9,
 
                    },
@@ -883,7 +883,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Customer Orientation",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 9,
 
                    },
@@ -891,7 +891,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Adaptability",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 10,
 
                    },
@@ -899,7 +899,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Curiousity",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 10,
 
                    },
@@ -907,7 +907,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Constant Improvement",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 10,
 
                    },
@@ -915,7 +915,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Handling Ambiguity",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 10,
 
                    },
@@ -923,7 +923,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Inclusivity",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 10,
 
                    },
@@ -931,7 +931,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Openness",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 10,
 
                    },
@@ -939,7 +939,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ambition and Initiative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 10,
 
                    },
@@ -947,7 +947,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Accountability",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 11,
 
                    },
@@ -955,7 +955,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Integrity",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 11,
 
                    },
@@ -963,7 +963,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ownership",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 11,
 
                    },
@@ -971,7 +971,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mentorship",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 11,
 
                    },
@@ -979,7 +979,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Networking",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 11,
 
                    },
@@ -987,7 +987,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Succession",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 11,
 
                    },
@@ -995,7 +995,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Health and Safety",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 11,
 
                    },
@@ -1003,7 +1003,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Confidence",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 11,
 
                    },
@@ -1011,7 +1011,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Credibility",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 11,
 
                    },
@@ -1019,7 +1019,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Technical",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 12,
 
                    },
@@ -1035,7 +1035,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Innovation",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 12,
 
                    },
@@ -1043,7 +1043,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Tool Proficiency",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 12,
 
                    },
@@ -1051,7 +1051,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Judgement",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 13,
 
                    },
@@ -1059,7 +1059,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Root Cause Resolution",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 13,
 
                    },
@@ -1067,7 +1067,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Writing",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 14,
 
                    },
@@ -1075,7 +1075,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Reading",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 14,
 
                    },
@@ -1091,7 +1091,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Listening",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 14,
 
                    },
@@ -1099,7 +1099,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Collaboration",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 15,
 
                    },
@@ -1107,7 +1107,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Agile",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1115,7 +1115,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Organizational",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1123,7 +1123,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Creative",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 16,
 
                    },
@@ -1131,7 +1131,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Project Execution",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1139,7 +1139,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Analytical Thinking",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 16,
 
                    },
@@ -1147,7 +1147,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Prioritization",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1155,7 +1155,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Problem Solving",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1163,7 +1163,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Incremental Delivery",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1171,7 +1171,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Decision Making",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1179,7 +1179,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Appropriate Autonomy",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 16,
 
                    },
@@ -1187,7 +1187,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Planning and Estimating",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1203,7 +1203,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mission and Vision",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 17,
 
                    },
@@ -1211,7 +1211,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Customer Orientation",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 17,
 
                    },
@@ -1219,7 +1219,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Adaptability",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 18,
 
                    },
@@ -1227,7 +1227,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Curiousity",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 18,
 
                    },
@@ -1235,7 +1235,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Constant Improvement",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 18,
 
                    },
@@ -1243,7 +1243,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Handling Ambiguity",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 18,
 
                    },
@@ -1259,7 +1259,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Openness",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 18,
 
                    },
@@ -1267,7 +1267,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ambition and Initiative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 18,
 
                    },
@@ -1275,7 +1275,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Accountability",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 19,
 
                    },
@@ -1299,7 +1299,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mentorship",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 19,
 
                    },
@@ -1307,7 +1307,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Networking",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 19,
 
                    },
@@ -1315,7 +1315,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Succession",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 19,
 
                    },
@@ -1323,7 +1323,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Health and Safety",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 19,
 
                    },
@@ -1339,7 +1339,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Credibility",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 19,
 
                    },
@@ -1355,7 +1355,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Process",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 20,
 
                    },
@@ -1371,7 +1371,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Tool Proficiency",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 20,
 
                    },
@@ -1387,7 +1387,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Root Cause Resolution",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 21,
 
                    },
@@ -1411,7 +1411,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Speaking",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 22,
 
                    },
@@ -1419,7 +1419,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Listening",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 22,
 
                    },
@@ -1427,7 +1427,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Collaboration",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 23,
 
                    },
@@ -1435,7 +1435,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Agile",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1443,7 +1443,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Organizational",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1451,7 +1451,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Creative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 24,
 
                    },
@@ -1459,7 +1459,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Project Execution",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 24,
 
                    },
@@ -1467,7 +1467,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Analytical Thinking",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1475,7 +1475,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Prioritization",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 24,
 
                    },
@@ -1483,7 +1483,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Problem Solving",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 24,
 
                    },
@@ -1491,7 +1491,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Incremental Delivery",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 24,
 
                    },
@@ -1499,7 +1499,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Decision Making",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1507,7 +1507,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Appropriate Autonomy",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1515,7 +1515,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Planning and Estimating",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 24,
 
                    },
@@ -1523,7 +1523,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Dependability and Reliability",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    });
@@ -1874,7 +1874,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
@@ -1883,7 +1883,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
@@ -1892,7 +1892,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 1",
@@ -1901,7 +1901,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1910,7 +1910,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1919,7 +1919,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1928,7 +1928,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1937,7 +1937,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1946,7 +1946,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1955,7 +1955,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1964,7 +1964,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1973,7 +1973,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1982,7 +1982,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -1991,7 +1991,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2000,7 +2000,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2009,7 +2009,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2018,7 +2018,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2027,7 +2027,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2036,7 +2036,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2045,7 +2045,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2054,7 +2054,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2063,7 +2063,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2072,7 +2072,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2081,7 +2081,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2090,7 +2090,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2099,7 +2099,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2108,7 +2108,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2117,7 +2117,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2126,7 +2126,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2135,7 +2135,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2144,7 +2144,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2153,7 +2153,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2162,7 +2162,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2171,7 +2171,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2180,7 +2180,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2189,7 +2189,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2198,7 +2198,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2207,7 +2207,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2216,7 +2216,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2225,7 +2225,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2234,7 +2234,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2243,7 +2243,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2252,7 +2252,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2261,7 +2261,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 2",
@@ -2270,7 +2270,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2279,7 +2279,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2288,7 +2288,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2297,7 +2297,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2306,7 +2306,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2315,7 +2315,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2324,7 +2324,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2333,7 +2333,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2342,7 +2342,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2351,7 +2351,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2360,7 +2360,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2369,7 +2369,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 2,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2378,7 +2378,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2387,7 +2387,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2396,7 +2396,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2405,7 +2405,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2414,7 +2414,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2423,7 +2423,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2432,7 +2432,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2441,7 +2441,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2450,7 +2450,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2459,7 +2459,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2468,7 +2468,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2477,7 +2477,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2486,7 +2486,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2495,7 +2495,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2504,7 +2504,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2513,7 +2513,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2522,7 +2522,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2531,7 +2531,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2540,7 +2540,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2549,7 +2549,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2558,7 +2558,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2567,7 +2567,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2576,7 +2576,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2585,7 +2585,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2594,7 +2594,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2603,7 +2603,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
@@ -2612,7 +2612,7 @@ namespace curve_api.Data
                   new SubCategoryComment
                   {
                       Id = n,
-                      UserId = 1,
+                      UserId = 3,
                       SubCategoryId = n++,
                       Subject = $"TestSubject - SubCategory {n - 1}",
                       Content = "TestContent - Review 3",
