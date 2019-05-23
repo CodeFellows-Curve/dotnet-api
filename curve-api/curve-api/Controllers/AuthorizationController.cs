@@ -28,7 +28,7 @@ namespace curve_api.Controllers
             _config = config;
         }
 
-        [HttpGet("{email}")]
+        [HttpGet("{email}"), Authorize]
         public async Task<IActionResult> GetAsync(string email)
         {
             User user = await _user.GetUser(email.ToLower()) ??
