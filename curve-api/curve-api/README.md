@@ -91,16 +91,17 @@ increase security for authorization for the data retrieval for the front end
 ## Recomendations for future development
 
 
-look into this doc
-[image of known solution proof on github ](assets/MediumBlog.JPG)
+look into this doc for up to date information regaurding GraphQL
+![image of known solution proof on github ](assets/MediumBlog.JPG)
 https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b
 
 Explains what our problem is and why it exists.
 ## Docs Referenced (links)
 
 
-* [Here's a link](http://someurl.link)
-* [And another link](http://someurl.link)
+[Link to the graphQL docs on github](https://github.com/graphql-dotnet/authorization)
+[link to the doc that was mainly used to guide this application](https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b)
+
 
 
 
