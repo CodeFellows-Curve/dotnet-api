@@ -40,8 +40,8 @@ namespace curve_api
 
             // Database connection strings
             var connectionString_CurveDB = Environment.IsDevelopment()
-                                                ? Configuration["ConnectionStrings:DefaultConnection_CurveDB"]
-                                                : Configuration["ConnectionStrings:DefaultConnection_CurveDB"];
+                                                ? Configuration["ConnectionStrings:ProductionConnection_CurveDB"]
+                                                : Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
             // Register DB context in services
 
