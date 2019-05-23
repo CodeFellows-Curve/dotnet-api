@@ -10,6 +10,7 @@ namespace curve_api.Types.Individual
         {
             Field(x => x.Id);
             Field(x => x.Name);
+            Field(x => x.Email);
             Field(x => x.CompetencyScore);
             Field(x => x.CurrentLevel);
             Field(x => x.PointsToNext);
