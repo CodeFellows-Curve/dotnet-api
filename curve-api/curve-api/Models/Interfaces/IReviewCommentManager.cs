@@ -11,10 +11,11 @@ namespace curve_api.Models.Interfaces
 
         Task<List<ReviewComment>> GetAllByReviewId(int reviewId);
 
-        Task CreateReviewComment(ReviewComment reviewComment);
+        Task<ReviewComment> CreateReviewComment(ReviewComment reviewComment);
 
-        Task UpdateReviewComment(ReviewComment reviewComment);
+        Task<ReviewComment> UpdateReviewComment(ReviewComment reviewComment);
 
+        // TODO: Find out and impliment the return type that GraphQL needs for delete mutation
         Task DeleteReviewComment(int id);
     }
 }

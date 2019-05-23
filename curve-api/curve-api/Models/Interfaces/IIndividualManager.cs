@@ -15,10 +15,11 @@ namespace curve_api.Models.Interfaces
 
         Task<List<Individual>> GetAllIndividuals();
 
-        Task CreateIndividual(Individual individual);
+        Task<Individual> CreateIndividual(Individual individual);
 
-        Task UpdateIndividual(Individual individual);
+        Task<Individual> UpdateIndividual(Individual individual);
 
+        // TODO: Find out and impliment the return type that GraphQL needs for delete mutation
         Task DeleteIndividual(int id);
     }
 }

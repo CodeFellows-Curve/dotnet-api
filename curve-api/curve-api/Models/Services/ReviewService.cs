@@ -23,10 +23,11 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="review">The Review being added</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task CreateReview(Review review)
+        public async Task<Review> CreateReview(Review review)
         {
             _context.Add(review);
             await _context.SaveChangesAsync();
+            return review;
         }
 
         /// <summary>
@@ -93,10 +94,11 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="review">The Review being updated</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task UpdateReview(Review review)
+        public async Task<Review> UpdateReview(Review review)
         {
             _context.Update(review);
             await _context.SaveChangesAsync();
+            return review;
         }
     }
 }
