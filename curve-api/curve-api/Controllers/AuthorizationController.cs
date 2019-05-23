@@ -34,7 +34,7 @@ namespace curve_api.Controllers
             User user = await _user.GetUser(email.ToLower()) ??
                 await _user.AddUser(email.ToLower());
 
-            return Ok(GenerateJWT(user));
+            return Ok(new {token = GenerateJWT(user)});
         }
 
         /// <summary>
