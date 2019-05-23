@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using curve_api.Data;
 using curve_api.Models;
 
+
 namespace XUnitTestProject1.ServicesTests.CategoryServiceTests
 {
     public class CategoryServiceTest
     {
         [Fact]
+
         public async Task CanCreateCategory()
         {
             DbContextOptions<CurveDBContext> options = new DbContextOptionsBuilder<CurveDBContext>().UseInMemoryDatabase("CanCreateCategory").Options;

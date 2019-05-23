@@ -140,5 +140,3 @@ namespace XUnitTestProject1.ServicesTests.CategoryCommentServiceTests
         }
     }
 }
-
-
