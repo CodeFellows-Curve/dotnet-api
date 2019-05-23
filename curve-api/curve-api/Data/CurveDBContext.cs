@@ -40,7 +40,7 @@ namespace curve_api.Data
                    new Individual
                    {
                        Id = n++,
-                       Email = "TestOne@Test.com",
+                       Email = "Caity@Test.com",
                        Name = "Caity",
                        CompetencyScore = 1,
                        CurrentLevel = 1,
@@ -563,7 +563,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Adaptability",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 2,
 
                    },
@@ -571,7 +571,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Curiosity",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 2,
 
                    },
@@ -579,7 +579,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Constant Improvement",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 2,
 
                    },
@@ -587,7 +587,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Handling Ambiguity",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 2,
 
                    },
@@ -595,7 +595,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Inclusivity",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 2,
 
                    },
@@ -603,7 +603,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Openness",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 2,
 
                    },
@@ -611,7 +611,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ambition and Initiative",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 2,
 
                    },
@@ -627,7 +627,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Integrity",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 3,
 
                    },
@@ -635,7 +635,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ownership",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 3,
 
                    },
@@ -643,7 +643,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mentorship",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 3,
 
                    },
@@ -659,7 +659,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Succession",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 3,
 
                    },
@@ -667,7 +667,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Health and Safety",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 3,
 
                    },
@@ -675,7 +675,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Confidence",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 3,
 
                    },
@@ -683,7 +683,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Credibility",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 3,
 
                    },
@@ -691,7 +691,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Technical",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 4,
 
                    },
@@ -699,7 +699,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Process",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 4,
 
                    },
@@ -707,7 +707,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Innovation",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 4,
 
                    },
@@ -715,7 +715,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Tool Proficiency",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 4,
 
                    },
@@ -723,7 +723,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Judgement",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 5,
 
                    },
@@ -731,7 +731,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Root Cause Resolution",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 5,
 
                    },
@@ -739,7 +739,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Writing",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 6,
 
                    },
@@ -747,7 +747,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Reading",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 6,
 
                    },
@@ -763,7 +763,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Listening",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 6,
 
                    },
@@ -771,7 +771,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Collaboration",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 7,
 
                    },
@@ -779,7 +779,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Agile",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 8,
 
                    },
@@ -787,7 +787,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Organizational",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 8,
 
                    },
@@ -795,7 +795,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Creative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 8,
 
                    },
@@ -803,7 +803,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Project Execution",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 8,
 
                    },
@@ -811,7 +811,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Analytical Thinking",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 8,
 
                    },
@@ -819,7 +819,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Prioritization",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 8,
 
                    },
@@ -827,7 +827,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Problem Solving",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 8,
 
                    },
@@ -835,7 +835,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Incremental Delivery",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 8,
 
                    },
@@ -843,7 +843,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Decision Making",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 8,
 
                    },
@@ -851,7 +851,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Appropriate Autonomy",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 8,
 
                    },
@@ -859,7 +859,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Planning and Estimating",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 8,
 
                    },
@@ -875,7 +875,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mission and Vision",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 9,
 
                    },
@@ -883,7 +883,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Customer Orientation",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 9,
 
                    },
@@ -891,7 +891,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Adaptability",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 10,
 
                    },
@@ -899,7 +899,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Curiousity",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 10,
 
                    },
@@ -907,7 +907,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Constant Improvement",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 10,
 
                    },
@@ -915,7 +915,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Handling Ambiguity",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 10,
 
                    },
@@ -923,7 +923,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Inclusivity",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 10,
 
                    },
@@ -931,7 +931,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Openness",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 10,
 
                    },
@@ -939,7 +939,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ambition and Initiative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 10,
 
                    },
@@ -947,7 +947,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Accountability",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 11,
 
                    },
@@ -955,7 +955,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Integrity",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 11,
 
                    },
@@ -963,7 +963,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ownership",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 11,
 
                    },
@@ -971,7 +971,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mentorship",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 11,
 
                    },
@@ -979,7 +979,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Networking",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 11,
 
                    },
@@ -987,7 +987,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Succession",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 11,
 
                    },
@@ -995,7 +995,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Health and Safety",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 11,
 
                    },
@@ -1003,7 +1003,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Confidence",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 11,
 
                    },
@@ -1011,7 +1011,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Credibility",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 11,
 
                    },
@@ -1019,7 +1019,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Technical",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 12,
 
                    },
@@ -1035,7 +1035,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Innovation",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 12,
 
                    },
@@ -1043,7 +1043,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Tool Proficiency",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 12,
 
                    },
@@ -1051,7 +1051,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Judgement",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 13,
 
                    },
@@ -1059,7 +1059,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Root Cause Resolution",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 13,
 
                    },
@@ -1067,7 +1067,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Writing",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 14,
 
                    },
@@ -1075,7 +1075,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Reading",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 14,
 
                    },
@@ -1091,7 +1091,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Listening",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 14,
 
                    },
@@ -1099,7 +1099,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Collaboration",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 15,
 
                    },
@@ -1107,7 +1107,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Agile",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1115,7 +1115,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Organizational",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1123,7 +1123,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Creative",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 16,
 
                    },
@@ -1131,7 +1131,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Project Execution",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1139,7 +1139,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Analytical Thinking",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 16,
 
                    },
@@ -1147,7 +1147,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Prioritization",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1155,7 +1155,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Problem Solving",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1163,7 +1163,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Incremental Delivery",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1171,7 +1171,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Decision Making",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 16,
 
                    },
@@ -1179,7 +1179,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Appropriate Autonomy",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 16,
 
                    },
@@ -1187,7 +1187,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Planning and Estimating",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 16,
 
                    },
@@ -1203,7 +1203,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mission and Vision",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 17,
 
                    },
@@ -1211,7 +1211,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Customer Orientation",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 17,
 
                    },
@@ -1219,7 +1219,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Adaptability",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 18,
 
                    },
@@ -1227,7 +1227,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Curiousity",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 18,
 
                    },
@@ -1235,7 +1235,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Constant Improvement",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 18,
 
                    },
@@ -1243,7 +1243,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Handling Ambiguity",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 18,
 
                    },
@@ -1259,7 +1259,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Openness",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 18,
 
                    },
@@ -1267,7 +1267,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Ambition and Initiative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 18,
 
                    },
@@ -1275,7 +1275,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Accountability",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 19,
 
                    },
@@ -1299,7 +1299,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Mentorship",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 19,
 
                    },
@@ -1307,7 +1307,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Networking",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 19,
 
                    },
@@ -1315,7 +1315,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Succession",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 19,
 
                    },
@@ -1323,7 +1323,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Health and Safety",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 19,
 
                    },
@@ -1339,7 +1339,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Credibility",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 19,
 
                    },
@@ -1355,7 +1355,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Process",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 20,
 
                    },
@@ -1371,7 +1371,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Tool Proficiency",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 20,
 
                    },
@@ -1387,7 +1387,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Root Cause Resolution",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 21,
 
                    },
@@ -1411,7 +1411,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Speaking",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 22,
 
                    },
@@ -1419,7 +1419,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Listening",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 22,
 
                    },
@@ -1427,7 +1427,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Collaboration",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 23,
 
                    },
@@ -1435,7 +1435,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Agile",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1443,7 +1443,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Organizational",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1451,7 +1451,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Creative",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 24,
 
                    },
@@ -1459,7 +1459,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Project Execution",
-                       Score = 1,
+                       Score = 0,
                        CategoryId = 24,
 
                    },
@@ -1467,7 +1467,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Analytical Thinking",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1475,7 +1475,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Prioritization",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 24,
 
                    },
@@ -1483,7 +1483,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Problem Solving",
-                       Score = 1,
+                       Score = 2,
                        CategoryId = 24,
 
                    },
@@ -1491,7 +1491,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Incremental Delivery",
-                       Score = 1,
+                       Score = 3,
                        CategoryId = 24,
 
                    },
@@ -1499,7 +1499,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Decision Making",
-                       Score = 1,
+                       Score = 4,
                        CategoryId = 24,
 
                    },
@@ -1515,7 +1515,7 @@ namespace curve_api.Data
                    {
                        Id = n++,
                        SubCategoryName = "Planning and Estimating",
-                       Score = 4,
+                       Score = 3,
                        CategoryId = 24,
 
                    },
