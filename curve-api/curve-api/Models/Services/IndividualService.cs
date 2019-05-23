@@ -49,6 +49,11 @@ namespace curve_api.Models.Services
             return await _context.Individuals.Where(ind => ind.Name == name).FirstOrDefaultAsync();
         }
 
+        public async Task<Individual> GetIndividualByEmail(string email)
+        {
+            return await _context.Individuals.Where(ind => ind.Email == email).FirstOrDefaultAsync();
+        }
+
         public async Task UpdateIndividual(Individual individual)
         {
             _context.Update(individual);

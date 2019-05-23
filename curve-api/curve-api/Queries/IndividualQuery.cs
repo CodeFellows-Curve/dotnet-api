@@ -16,6 +16,11 @@ namespace curve_api.Queries
                 "individual",
                 arguments: new QueryArguments(new QueryArgument<StringGraphType> { Name = "name" }),
                 resolve: context => individualManager.GetIndividualByName(context.GetArgument<string>("name")));
+
+            Field<IndividualType>(
+                "individual",
+                arguments: new QueryArguments(new QueryArgument<StringGraphType> { Name = "email" }),
+                resolve: context => individualManager.GetIndividualByEmail(context.GetArgument<string>("email")));
         }
     }
 }
