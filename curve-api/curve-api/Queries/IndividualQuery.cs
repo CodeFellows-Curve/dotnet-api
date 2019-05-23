@@ -13,7 +13,7 @@ namespace curve_api.Queries
                 resolve: context => individualManager.GetAllIndividuals());
 
             Field<IndividualType>(
-                "individualname",
+                "individual",
                 arguments: new QueryArguments(new QueryArgument<StringGraphType> { Name = "name" }),
                 resolve: context => individualManager.GetIndividualByName(context.GetArgument<string>("name")));
 
