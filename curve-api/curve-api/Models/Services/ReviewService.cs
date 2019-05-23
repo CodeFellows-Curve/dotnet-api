@@ -18,10 +18,11 @@ namespace curve_api.Models.Services
             _context = context;
         }
 
-        public async Task CreateReview(Review review)
+        public async Task<Review> CreateReview(Review review)
         {
             _context.Add(review);
             await _context.SaveChangesAsync();
+            return review;
         }
 
         public async Task DeleteReview(int id)
@@ -57,10 +58,11 @@ namespace curve_api.Models.Services
             return await _context.Reviews.FindAsync(id);
         }
 
-        public async Task UpdateReview(Review review)
+        public async Task<Review> UpdateReview(Review review)
         {
             _context.Update(review);
             await _context.SaveChangesAsync();
+            return review;
         }
     }
 }

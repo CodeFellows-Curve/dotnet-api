@@ -11,10 +11,11 @@ namespace curve_api.Models.Interfaces
 
         Task<List<Category>> GetAllByReviewId(int reviewId);
 
-        Task CreateCategory(Category category);
+        Task<Category> CreateCategory(Category category);
 
-        Task UpdateCategory(Category category);
+        Task<Category> UpdateCategory(Category category);
 
+        // TODO: Find out and impliment the return type that GraphQL needs for delete mutation
         Task DeleteCategory(int id);
     }
 }
