@@ -55,13 +55,13 @@ namespace curve_api
             string connectionString_CurveDB, connectionString_CurveUserDB;
             if (Environment.IsDevelopment())
             {
-                connectionString_CurveDB = Configuration.GetConnectionString("CurveDB");
-                connectionString_CurveUserDB = Configuration.GetConnectionString("CurveUserDB");
+                connectionString_CurveDB = Configuration["ConnectionStrings:DefaultConnection_CurveDB"];
+                connectionString_CurveUserDB = Configuration["ConnectionStrings:DefaultConnection_CurveUserDB"];
             }
             else
             {
-                connectionString_CurveDB = Configuration.GetConnectionString("ProductionConnection_CurveDB");
-                connectionString_CurveUserDB = Configuration.GetConnectionString("ProductionConnection_CurveDB");
+                connectionString_CurveDB = Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+                connectionString_CurveUserDB = Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
             }
 
             // Register DB context in services
