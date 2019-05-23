@@ -18,10 +18,11 @@ namespace curve_api.Models.Services
             _context = context;
         }
 
-        public async Task CreateCategoryComment(CategoryComment categoryComment)
+        public async Task<CategoryComment> CreateCategoryComment(CategoryComment categoryComment)
         {
             _context.Add(categoryComment);
             await _context.SaveChangesAsync();
+            return categoryComment;
         }
 
         public async Task DeleteCategoryComment(int id)
@@ -46,10 +47,11 @@ namespace curve_api.Models.Services
             return categoryComment;
         }
 
-        public async Task UpdateCategoryComment(CategoryComment categoryComment)
+        public async Task<CategoryComment> UpdateCategoryComment(CategoryComment categoryComment)
         {
             _context.CategoryComments.Update(categoryComment);
             await _context.SaveChangesAsync();
+            return categoryComment;
         }
     }
 }

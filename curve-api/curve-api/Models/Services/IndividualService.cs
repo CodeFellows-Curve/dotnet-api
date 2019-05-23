@@ -18,10 +18,11 @@ namespace curve_api.Models.Services
             _context = context;
         }
 
-        public async Task CreateIndividual(Individual individual)
+        public async Task<Individual> CreateIndividual(Individual individual)
         {
             _context.Add(individual);
             await _context.SaveChangesAsync();
+            return individual;
         }
 
         public async Task DeleteIndividual(int id)
@@ -49,10 +50,11 @@ namespace curve_api.Models.Services
             return await _context.Individuals.Where(ind => ind.Name == name).FirstOrDefaultAsync();
         }
 
-        public async Task UpdateIndividual(Individual individual)
+        public async Task<Individual> UpdateIndividual(Individual individual)
         {
             _context.Update(individual);
             await _context.SaveChangesAsync();
+            return individual;
         }
     }
 }

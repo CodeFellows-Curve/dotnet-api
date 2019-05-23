@@ -19,10 +19,11 @@ namespace curve_api.Models.Services
         }
 
 
-        public async Task CreateSubCategory(SubCategory subCategory)
+        public async Task<SubCategory> CreateSubCategory(SubCategory subCategory)
         {
             _context.Add(subCategory);
             await _context.SaveChangesAsync();
+            return subCategory;
         }
 
         public async Task DeleteSubCategory(int id)
@@ -45,10 +46,11 @@ namespace curve_api.Models.Services
             return await _context.Subcategories.FindAsync(id);
         }
 
-        public async Task UpdateSubCategory(SubCategory subCategory)
+        public async Task<SubCategory> UpdateSubCategory(SubCategory subCategory)
         {
             _context.Update(subCategory);
             await _context.SaveChangesAsync();
+            return subCategory;
         }
     }
 }
