@@ -7,8 +7,9 @@ namespace curve_api.Types.Review
     {
         public ReviewInputType()
         {
-            Field<NonNullGraphType<StringGraphType>>("subject");
-            Field<StringGraphType>("content");
+            Field<DateTimeGraphType>("reviewDate");
+            Field<IntGraphType>("individualId");
+            Field<IntGraphType>("overallScore");
         }
     }
 }

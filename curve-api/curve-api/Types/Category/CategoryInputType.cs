@@ -8,6 +8,8 @@ namespace curve_api.Types.Category
         {
             Field<NonNullGraphType<StringGraphType>>("categoryname");
             Field<IntGraphType>("overallscore");
+            Field<IntGraphType>("reviewId");
+
         }
     }
 }

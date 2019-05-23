@@ -81,7 +81,7 @@ namespace curve_api
             services.AddSingleton<Types.CategoryComment.CategoryCommentInputType>();
             services.AddSingleton<Types.SubCategoryComment.SubCategoryCommentInputType>();
 
-            services.AddSingleton<IndividualMutation>();
+            services.AddSingleton<Mutation>();
             services.AddSingleton<ReviewMutation>();
             services.AddSingleton<CategoryMutation>();
             services.AddSingleton<SubCategoryMutation>();
