@@ -5,21 +5,38 @@
 
 ## DESCRIPTION
 
+### Contributors
 <details>
-  <summary><b>Contributers</b></summary>
-    <ul>
-      <li>[Daniel Logerstedt](https://github.com/daniellogerstedt)</li>
-      <li>[Christopher Morton](https://github.com/cmorto02)</li>
-      <li>[Ian Gifford](https://github.com/IanGifford261)</li>
-      <li>[Michael Kelly](https://github.com/Michael-S-Kelly)</li>
-      <li>[Andrew Roska](https://github.com/Roketsu86)</li>
-      <li>[Tanner Percival](https://github.com/Tanner253)</li>
-    </ul>
+  <summary><b>Integrations Team Liasons</b></summary>
+  <ul>
+    <li>Jason Burns, Auth Liason (https://github.com/jasonb315)</li>
+    <li>Andrew Curtis, GraphQL Liason (https://github.com/amjcurtis)</li>
+  </ul>
+</details>
+<details>
+  <summary><b>Auth Team</b></summary>
+  <ul>
+    <li>Tanner Percival, Lead Developer (https://github.com/Tanner253)</li>
+    <li>Andrew Roska, Developer (https://github.com/Roketsu86)</li>
+    <li>Ben Taylor, Developer (https://github.com/BenSTay)</li>
+  </ul>
+</details>
+<details>
+  <summary><b>GraphQL Team</b></summary>
+  <ul>
+    <li>Daniel Logerstedt, Lead Developer (https://github.com/daniellogerstedt)</li>
+    <li>Ian Gifford, Developer (https://github.com/IanGifford261)</li>
+    <li>Michael Kelly, Developer (https://github.com/Michael-S-Kelly)</li>
+    <li>Christopher Morton, Developer (https://github.com/cmorto02)</li>
+  </ul>
 </details>
 
-
+#### Auth Team Goal
 Utilize OAuth for google and github through Auth0 (Library of OAuth providers) to quickly and seamlessly allow users to register and use the site as inteded. a couple of things to keep in mind about Auth0 is that there is a default and mandatory 
-timeout for the access token where a new one is generated on login or register. this means that the access token is not persistant and becomes very difficult to validate. 
+timeout for the access token where a new one is generated on login or register. this means that the access token is not persistant and becomes very difficult to validate.
+
+#### GraphQL Team Goal
+Build a responsive GraphQL endpoing that has the ability to perform full CRUD operations with an attached database to store periodic review information based on the list of core competencies. As well as the ability to post comments for any given section of a review.
 
 
 ##### SUB HEADERS
@@ -58,7 +75,9 @@ GraphQL was chosen for use in building the API because it was a hard requirement
 
 ## UML
 
-![a-neat-pic](http://someurl.link)
+
+#### Backend UML
+![Backend UML](./assets/BackendUML.png)
 
 
 ## Process flow
