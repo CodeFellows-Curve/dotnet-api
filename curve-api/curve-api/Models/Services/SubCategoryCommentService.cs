@@ -18,6 +18,11 @@ namespace curve_api.Models.Services
             _context = context;
         }
 
+        /// <summary>
+        /// Creates a SubCategoryComment Entity in the database.
+        /// </summary>
+        /// <param name="subCategoryComment">The SubCategoryComment being added</param>
+        /// <returns>An Asynchronous Task</returns>
         public async Task<SubCategoryComment> CreateSubCategoryComment(SubCategoryComment subCategoryComment)
         {
             _context.Add(subCategoryComment);
@@ -25,6 +30,11 @@ namespace curve_api.Models.Services
             return subCategoryComment;
         }
 
+        /// <summary>
+        /// Deletes a SubCategoryComment Entity from the database.
+        /// </summary>
+        /// <param name="id">The Id of the SubCategoryComment being deleted</param>
+        /// <returns>An Asynchronous Task</returns>
         public async Task DeleteSubCategoryComment(int id)
         {
             SubCategoryComment scc = await _context.SubcategoryComments.FindAsync(id);
@@ -35,16 +45,31 @@ namespace curve_api.Models.Services
             }
         }
 
+        /// <summary>
+        /// Gets all SubCategoryComments that are related to a given Category.
+        /// </summary>
+        /// <param name="subCategoryId">The SubCategory Id being looked for</param>
+        /// <returns>A List of SubCategoryComment Entities</returns>
         public async Task<List<SubCategoryComment>> GetAllBySubCategoryId(int subCategoryId)
         {
             return await _context.SubcategoryComments.Where(sc => sc.SubCategoryId == subCategoryId).ToListAsync();
         }
 
+        /// <summary>
+        /// Gets a specific SubCategoryComment Entity by Id.
+        /// </summary>
+        /// <param name="id">The SubCategoryComment Id being retrieved.</param>
+        /// <returns>A SubCategoryComment Entity</returns>
         public async Task<SubCategoryComment> GetSubCategoryCommentById(int id)
         {
             return await _context.SubcategoryComments.FindAsync(id);
         }
 
+        /// <summary>
+        /// Updates a SubCategoryComment Entity in the database.
+        /// </summary>
+        /// <param name="subCategoryComment">The SubCategoryComment being updated</param>
+        /// <returns>An Asynchronous Task</returns>
         public async Task<SubCategoryComment> UpdateSubCategoryComment(SubCategoryComment subCategoryComment)
         {
             _context.Update(subCategoryComment);

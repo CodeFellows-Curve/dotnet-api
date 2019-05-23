@@ -11,6 +11,8 @@ namespace curve_api.Models.Interfaces
 
         Task<Individual> GetIndividualByName(string name);
 
+        Task<Individual> GetIndividualByEmail(string email);
+
         Task<List<Individual>> GetAllIndividuals();
 
         Task<Individual> CreateIndividual(Individual individual);
