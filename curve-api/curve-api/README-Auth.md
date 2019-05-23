@@ -1,4 +1,4 @@
-#GOALS for the auth team
+# GOALS for the auth team
 
 utilize OAuth for google and github through Auth0 (Library of OAuth providers) to quickly and seamlessly allow users to register and use the site as inteded. a couple of things to keep in mind about Auth0 is that there is a default and mandatory 
 timeout for the access token where a new one is generated on login or register. this means that the access token is not persistant and becomes very difficult to validate. 
@@ -32,7 +32,7 @@ see https://github.com/graphql-dotnet/authorization
 - Don't use gatsby with graphQL
 - use seperate routing for OAuth instead of using Auth0 to mitigate the whole thing
 
-####- It is currently not possible to add a policy to input objects using schema first approach (schema first uses graphQL authorize) dependant! don’t work!
+####- It is currently not possible to add a policy to input objects using schema first approach (schema first uses graphQL authorize) dependant! donâ€™t work!
 - Cannot send user information over http requests (security vulnerability)
 
 ### What we were trying to do first:
@@ -83,7 +83,7 @@ once graphQL gets a version update retry the implementation
 [image of known solution proof on github ](assets/MediumBlog.JPG)
 https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b
 
-##Current plan of attack:
+## Current plan of attack:
 
 With this implementation attempt we have gone back to implementing Autho0, where as our problem with our previous implementation was that the access token was not persistent across logins and the Timeout timer of 24 hours (mandatory) which made authenticating each user that signs in close to impossible
 across multiple tables. to mitigate this issue we will receive an access token from the first request to Auth0 (front end) and that access token will be sent to the back end on a request for information, on that request the back end will sinde the current access token to Auth0 where we will receive a 
@@ -110,7 +110,7 @@ it is bad practice to implement your OWN hash and salt as any algorithm created 
 This was our last idea, and our final chance to implement auth into the application where it meets the clients given requests. The trickiest part hypothetically is validating the queries sent to the GraphQL side with the integrated GraphQL User class which  takes care of some of the issues.
 
 
-#Things that went well
+# Things that went well
 - The Auth teams dynamic worked very well for an efficient and organized work flow where Andrew Roska was our star research teammate who was always finding the most up to date and relevant information to what we were trying to do at the given time.
 - Collaborating with the 3 other teams was a challenge and really fun. being able to negotiate plans and pre solve blockers by coming together to make sure the front and back mesh properly. 
 on day 2 the Auth team and the front end team collaborated for a 2 - 3 hour session where we laid out many issues,
@@ -124,12 +124,12 @@ desires for authentication and role management.
 Core does not support the sending of data from domain to domain for authentication, and it is suggested that when this is required to use OAuth as it was intended for this purpose. Knowing this i can confidently say that we are happy with our progress and troubleshooting skills and wonder how we can 
 be the pioneers of this new technology in .NET Core (there are ways to work around this need but the work arounds are not industry standard, it would be nice to make a developer tool that was industry standard to maybe solve this problem in the future and make authentication with GraphQL a more enjoyable experience.)
 
-#Things that did not go well
+# Things that did not go well
 - Testing was neglected due to the 5 pivots the Auth team had to make. 
 - The assigned and desired technology use simply did not work out with the authentication service. we ran into countless issues with graphQL and authentication
 - We were able to push through but the constant implementation attempt with no success was morally defeating however we pulled through the end and was able to provide a viable authentication for a prototype application for the user.
 
-#What could have made the experience more successful?
+# What could have made the experience more successful?
 If all of the teams had more time to figure out what was required a day or even a few days ahead of the schedule that we were at we could have snuffed out a lot of these authentication issues just by talking about
 database structure, what requests might look like, and what is required of each team.
 Another thing that would have changed the progress of this application was if there was slightly more guidance for the project and for each team specifically. there was little to no organization and little to no time and
@@ -139,7 +139,7 @@ effectively practicing AGILE SCRUM but rather than it being over the course of s
 Creating this project has not been easy for any team, but the collaboration across teams through the integration team, and team leaders was nearly seamless and perfect. There was a lot of running around to keep everyone on track 
 but in the end our work flow was efficient and the whole experience was fun, and valuable.
 
-#If we could change this applications : 
+# If we could change this applications : 
 Right off the bat if we had full control of the application structure, we would not have used GraphQL in pair with Authentication, that being said an even easier solution would be to combine both repositories into one solution, 
 where database queries can take place in-house of the application, eliminating the need for a persistent access token or a header with given values in it, across domains. Just having the authentication and back end team 
 in the front end repository would have made most of the difference.
