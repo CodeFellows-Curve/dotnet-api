@@ -18,15 +18,18 @@ namespace curve_api.Models.Services
             _context = context;
         }
 
+
         /// <summary>
         /// Creates a CategoryComment Entity in the database.
         /// </summary>
         /// <param name="categoryComment">The CategoryComment Entity being added</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task CreateCategoryComment(CategoryComment categoryComment)
+        public async Task<CategoryComment> CreateCategoryComment(CategoryComment categoryComment)
+
         {
             _context.Add(categoryComment);
             await _context.SaveChangesAsync();
+            return categoryComment;
         }
 
         /// <summary>
@@ -66,15 +69,17 @@ namespace curve_api.Models.Services
             return categoryComment;
         }
 
+
         /// <summary>
         /// Updates a specific CategoryComment Entity
         /// </summary>
         /// <param name="categoryComment">The CategoryComment being updated</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task UpdateCategoryComment(CategoryComment categoryComment)
+        public async Task<CategoryComment> UpdateCategoryComment(CategoryComment categoryComment)
         {
             _context.CategoryComments.Update(categoryComment);
             await _context.SaveChangesAsync();
+            return categoryComment;
         }
     }
 }

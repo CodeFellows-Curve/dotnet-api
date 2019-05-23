@@ -23,10 +23,11 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="subCategory">The SubCategory being added</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task CreateSubCategory(SubCategory subCategory)
+        public async Task<SubCategory> CreateSubCategory(SubCategory subCategory)
         {
             _context.Add(subCategory);
             await _context.SaveChangesAsync();
+            return subCategory;
         }
 
         /// <summary>
@@ -69,10 +70,11 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="subCategory">The SubCategory being updated</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task UpdateSubCategory(SubCategory subCategory)
+        public async Task<SubCategory> UpdateSubCategory(SubCategory subCategory)
         {
             _context.Update(subCategory);
             await _context.SaveChangesAsync();
+            return subCategory;
         }
     }
 }

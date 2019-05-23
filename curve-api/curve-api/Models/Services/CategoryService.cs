@@ -22,10 +22,12 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="category">The Category being added</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task CreateCategory(Category category)
+        public async Task<Category> CreateCategory(Category category)
+
         {
             _context.Add(category);
             await _context.SaveChangesAsync();
+            return category;
         }
 
         /// <summary>
@@ -67,10 +69,11 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="category">The Category being updated</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task UpdateCategory(Category category)
+        public async Task<Category> UpdateCategory(Category category)
         {
             _context.Categories.Update(category);
             await _context.SaveChangesAsync();
+            return category;
         }
     }
 }

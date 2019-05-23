@@ -23,10 +23,11 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="individual">The Individual being added</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task CreateIndividual(Individual individual)
+        public async Task<Individual> CreateIndividual(Individual individual)
         {
             _context.Add(individual);
             await _context.SaveChangesAsync();
+            return individual;
         }
 
         /// <summary>
@@ -88,10 +89,11 @@ namespace curve_api.Models.Services
         /// </summary>
         /// <param name="individual">The Individual being updated</param>
         /// <returns>An Asynchronous Task</returns>
-        public async Task UpdateIndividual(Individual individual)
+        public async Task<Individual> UpdateIndividual(Individual individual)
         {
             _context.Update(individual);
             await _context.SaveChangesAsync();
+            return individual;
         }
     }
 }
