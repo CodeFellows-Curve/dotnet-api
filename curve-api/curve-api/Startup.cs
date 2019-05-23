@@ -39,31 +39,14 @@ namespace curve_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer("Auth0", options =>
-                {
-                    options.Authority = Configuration["Auth0:Authority"];
-                    options.Audience = Configuration["Auth0:Audience"];
-                }).AddJwtBearer("API", options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        ValidIssuer = Configuration["Jwt:Issuer"],
-                        ValidAudience = Configuration["Jwt:Issuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                    };
-                });
-
-            services.AddAuthorization(options =>
+            services.AddAuthentication(options =>
             {
-                AuthorizationPolicyBuilder defaultAPB = new AuthorizationPolicyBuilder(
-                    JwtBearerDefaults.AuthenticationScheme, "Auth0");
-                defaultAPB = defaultAPB.RequireAuthenticatedUser();
-                options.DefaultPolicy = defaultAPB.Build();
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = Configuration["Auth0:Authority"];
+                options.Audience = Configuration["Auth0:Audience"];
             });
 
             services.AddMvc();
@@ -133,8 +116,6 @@ namespace curve_api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseAuthentication();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

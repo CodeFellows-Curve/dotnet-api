@@ -42,7 +42,7 @@ namespace curve_api.Models.Services
 
         public async Task<User> GetUser(string email)
         {
-            return await _context.Users.FirstAsync(x => x.Email == email);
+            return await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
         }
 
         public async Task<bool> UserExists(string email)
