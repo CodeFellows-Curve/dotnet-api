@@ -26,7 +26,7 @@ namespace curve_api
 
 		public Startup(IHostingEnvironment environment)
 		{
-			//Environment = environment;
+			Environment = environment;
 			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
 			builder.AddUserSecrets<Startup>();
 			Configuration = builder.Build();
@@ -38,13 +38,13 @@ namespace curve_api
             services.AddMvc();
 
 			// Database connection strings
-			//var connectionString_CurveDB = !Environment.IsDevelopment()
-			//									? Configuration["ConnectionStrings:DefaultConnection_CurveDB"] 
-			//									: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+			var connectionString_CurveDB = !Environment.IsDevelopment()
+												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"]
+												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
 			// Register DB context in services
-
-			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
+			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+			//services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
 
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
@@ -71,8 +71,8 @@ namespace curve_api
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new CurveSchema(new FuncDependencyResolver(type => sp.GetService(type))));
 
-            services.AddDbContext<CurveUserDbContext>(options =>
-                options.UseSqlServer(Configuration["ConnectionStrings:CurveUserDb"]));
+            //services.AddDbContext<CurveUserDbContext>(options =>
+            //    options.UseSqlServer(Configuration["ConnectionStrings:CurveUserDb"]));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<CurveUserDbContext>()
