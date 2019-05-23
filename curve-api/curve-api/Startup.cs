@@ -26,7 +26,7 @@ namespace curve_api
 
 		public Startup(IHostingEnvironment environment)
 		{
-			//Environment = environment;
+			Environment = environment;
 			var builder = new ConfigurationBuilder().AddEnvironmentVariables();
 			builder.AddUserSecrets<Startup>();
 			Configuration = builder.Build();
