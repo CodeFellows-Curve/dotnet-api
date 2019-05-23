@@ -80,6 +80,10 @@ GraphQL was chosen for use in building the API because it was a hard requirement
 ![Backend UML](./assets/BackendUML.png)
 
 
+#### 5-Way Handshake UML
+![5-Way Handshake](https://github.com/CodeFellows-Curve/dotnet-api/blob/pre-staging/assets/5wayhandshakeuml.png)
+
+
 ## Process flow
 
 #### Auth Team
