@@ -64,9 +64,18 @@ render page
 currently with the most up to date versioning of graphQL, It is currently not possible to add a policy to input objects using schema first approach, which is the implementation that is required in order to integrate graphQL with the back end.
 this ended the implementation of Auth0 where we could not keep the access token persistent long enough to verify the user, and verify the request. this is not a viable solution because hackers can spoof an email and access another users data
 
-### What we are doing now:
+### What we tried to do Third:
 we have decided to use the framwork to aid in authorization as not much else plays nice with graphQL, so on registration we will be using claim based policies to tell the front end what a user can or cannot do. this implementation did not end up how we 
-wanted, we would also like to implement OAuth for github.
+wanted, we would also like to implement OAuth for github. - 3 hours later - turns out the current versioning of .NET core dos not support the injection of header information from one domain to a completely seperate domain. this becomes a problem because the front end need to
+recieve information about the role status of the given user and the visual and data access that they each individually have. this threw a wrench in all of the teams plans. This requires a full UML rework that we have come to and agreed on 
+with the rest of the team (listed next)
+
+button click front end ->
+razor page back end login and register (custom form) ->
+register user, and capture claims and assign role ->
+SEND TO FRONT END ON A POST (PROBLEMS: Cannot just post to a url withought it expecting a response, there can be no coordinated request from the front end to our back end because the user is on the back end login form.) not being able to send the data back to the front end is really what
+the main problem with the attempted implementation. ->
+front end dictates what the user can and cannot do in the application.
 
 # With a newer version of graphQL : 
 once graphQL gets a version update retry the implementation
