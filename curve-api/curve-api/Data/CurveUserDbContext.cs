@@ -13,18 +13,6 @@ namespace curve_api.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    ID = 1,
-                    Email = "andrew.l.roska@gmail.com",
-                    Role = "User",
-                    Key = "fiftyfive"
-                });
-        }
-
         // Set DB Tables
         public DbSet<User> Users { get; set; }
     }
