@@ -38,14 +38,13 @@ namespace curve_api
             services.AddMvc();
 
 			// Database connection strings
-			var connectionString_CurveDB = Environment.IsDevelopment()
+			var connectionString_CurveDB = !Environment.IsDevelopment()
 												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"]
 												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
 			// Register DB context in services
-			//services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
-
 			services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(connectionString_CurveDB));
+			//services.AddDbContext<CurveDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection_CurveDB"]));
 
             services.AddTransient<IIndividualManager, IndividualService>();
             services.AddTransient<IReviewManager, ReviewService>();
