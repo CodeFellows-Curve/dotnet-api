@@ -15,10 +15,11 @@ namespace curve_api.Models.Interfaces
 
         Task<List<Review>> GetAllByReviewDate(DateTime dateTime);
 
-        Task CreateReview(Review review);
+        Task<Review> CreateReview(Review review);
 
-        Task UpdateReview(Review review);
+        Task<Review> UpdateReview(Review review);
 
+        // TODO: Find out and impliment the return type that GraphQL needs for delete mutation
         Task DeleteReview(int id);
     }
 }
