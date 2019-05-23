@@ -147,6 +147,7 @@ namespace curve_api
 
             app.UseGraphiQl();
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
 
 
