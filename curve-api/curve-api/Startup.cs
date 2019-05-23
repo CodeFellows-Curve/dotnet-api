@@ -38,7 +38,7 @@ namespace curve_api
             services.AddMvc();
 
 			// Database connection strings
-			var connectionString_CurveDB = !Environment.IsDevelopment()
+			var connectionString_CurveDB = Environment.IsDevelopment()
 												? Configuration["ConnectionStrings:DefaultConnection_CurveDB"]
 												: Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
 
