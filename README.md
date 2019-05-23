@@ -38,10 +38,6 @@ timeout for the access token where a new one is generated on login or register. 
 #### GraphQL Team Goal
 Build a responsive GraphQL endpoing that has the ability to perform full CRUD operations with an attached database to store periodic review information based on the list of core competencies. As well as the ability to post comments for any given section of a review.
 
-
-##### SUB HEADERS
-
-
 ## Repo Purpose
 
 Authentication, GraphQL, and Database code for the backend portion of the Curve prototype.
@@ -72,6 +68,29 @@ The reason we chose to use Auth0 was because the client wanted the ability to OA
 securely. We are utilizing a controller to handle the actions to and from Auth0 and a model to store the proper data to verify the user.
 
 GraphQL was chosen for use in building the API because it was a hard requirement of the client. It was decided this would be used by the client because it allows dynamic and quick loading of data from the database that isn't restricted to a specific shape or type.
+
+## Getting Started
+Clone this repository to your local machine.
+```
+$ git clone [https://github.com]
+```
+#### To run the program from Visual Studio:
+1. Select ```File``` -> ```Open``` -> ```Project/Solution```
+
+2. Next navigate to the location you cloned the Repository.
+
+3. Double click on the ```dotnet-api``` directory.
+
+4. Then select and open ```curve-api.sln ```
+
+5. Click the IIS Express button at the top.
+
+#### Testing
+1. Follow steps 1 - 4 of running.
+
+2. Click ```Test``` menu
+
+3. Select ```Run All Tests```
 
 ## UML
 
@@ -131,21 +150,22 @@ If we were not using GraphQL or this project was in one repo most of the issues 
 
 increase security for authorization for the data retrieval for the front end
 
+##### GraphQL Team
+* Implement a return for delete functionality to prevent errors in GraphiQL and verify delete was properly completed.
+* More in depth testing of GraphQL Endpoint
+* Build Side-by-side Rest API?
+* Implement more policy controls and security
+
 ## Recomendations for future development
 
+look into GraphQL Resource #2, heavily.
 
-look into this doc
-[image of known solution proof on github ](assets/MediumBlog.JPG)
-https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b
-
-Explains what our problem is and why it exists.
 ## Docs Referenced (links)
 
-* [Auth Resource 1:](https://auth0.com/docs)
-* [Auth Resource 2:](https://auth0.com/docs/quickstart/backend/aspnet-core-webapi)
-* [GraphQL Resource 1: https://graphql-dotnet.github.io/docs/getting-started/introduction/](https://graphql-dotnet.github.io/docs/getting-started/introduction/)
-* [GraphQL Resource 2: https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b](https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b)
-
+* [Auth Resource #1:](https://auth0.com/docs)
+* [Auth Resource #2:](https://auth0.com/docs/quickstart/backend/aspnet-core-webapi)
+* [GraphQL Resource #1](https://graphql-dotnet.github.io/docs/getting-started/introduction/)
+* [GraphQL Resource #2](https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b)
 
 <!-- ##### SUB HEADERS -->
 <!--
@@ -153,7 +173,6 @@ Explains what our problem is and why it exists.
 -->
 ***
 
-footnotes
 # RAW DOCUMENTATION PLEASE READ!
 https://github.com/CodeFellows-Curve/dotnet-api/blob/pre-staging/curve-api/curve-api/README-Auth.md
 
