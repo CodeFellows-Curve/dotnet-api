@@ -50,6 +50,10 @@ namespace curve_api
                 options.Audience = Configuration["Auth0:Audience"];
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin", builder => builder.WithOrigins("https://codefellows-curve.netlify.com/"));
+            });
             services.AddMvc();
 
             //Database connection strings
@@ -140,7 +144,7 @@ namespace curve_api
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            
             app.UseGraphiQl();
             app.UseHttpsRedirection();
             app.UseAuthentication();
