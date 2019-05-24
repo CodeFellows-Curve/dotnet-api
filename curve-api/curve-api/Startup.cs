@@ -62,7 +62,7 @@ namespace curve_api
             else
             {
                 connectionString_CurveDB = Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
-                connectionString_CurveUserDB = Configuration["ConnectionStrings:ProductionConnection_CurveDB"];
+                connectionString_CurveUserDB = Configuration["ConnectionStrings:ProductionConnection_CurveUserDB"];
             }
 
             // Register DB context in services
