@@ -40,7 +40,7 @@ namespace curve_api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer("Auth0", options =>
+                .AddJwtBearer(options =>
                 {
                     options.Authority = Configuration["Auth0:Authority"];
                     options.Audience = Configuration["Auth0:Audience"];
@@ -61,7 +61,7 @@ namespace curve_api
             services.AddAuthorization(options =>
             {
                 AuthorizationPolicyBuilder defaultAPB = new AuthorizationPolicyBuilder(
-                    JwtBearerDefaults.AuthenticationScheme, "Auth0");
+                    JwtBearerDefaults.AuthenticationScheme, "API");
                 defaultAPB = defaultAPB.RequireAuthenticatedUser();
                 options.DefaultPolicy = defaultAPB.Build();
             });
