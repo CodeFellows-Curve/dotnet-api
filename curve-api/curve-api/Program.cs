@@ -22,16 +22,20 @@ namespace curve_api
             {
                 IServiceProvider services = scope.ServiceProvider;
 
-                try
-                {
-                    StartupDbInitializer.SeedData(services);
-                }
+                // LEGACY CODE DO NOT USE
+                // LEGACY CODE DO NOT USE
+                // LEGACY CODE DO NOT USE
 
-                catch (Exception e)
-                {
-                    ILogger logger = host.Services.GetRequiredService<ILogger<Program>>();
-                    logger.LogInformation(e.ToString());
-                }
+                //try
+                //{
+                //    StartupDbInitializer.SeedData(services);
+                //}
+
+                //catch (Exception e)
+                //{
+                //    ILogger logger = host.Services.GetRequiredService<ILogger<Program>>();
+                //    logger.LogInformation(e.ToString());
+                //}
 
                 host.Run();
             }

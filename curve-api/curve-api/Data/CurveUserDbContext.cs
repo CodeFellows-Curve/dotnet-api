@@ -1,5 +1,4 @@
 ﻿using curve_api.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace curve_api.Data
 {
-    public class CurveUserDbContext : IdentityDbContext<ApplicationUser>
+    public class CurveUserDBContext : DbContext
     {
-        public CurveUserDbContext(DbContextOptions<CurveUserDbContext> options) : base(options)
+        public CurveUserDBContext(DbContextOptions<CurveUserDBContext> options) : base(options)
         {
-
         }
+
+        // Set DB Tables
+        public DbSet<User> Users { get; set; }
     }
 }
