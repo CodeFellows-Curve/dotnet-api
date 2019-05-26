@@ -1,7 +1,7 @@
 <br>
 
 ![alt text](https://github.com/CodeFellows-Curve/project-resources/blob/master/assets/logoSnip.JPG)
-# Curve: Repository Name
+# Curve: dotnet-api
 
 ## DESCRIPTION
 
