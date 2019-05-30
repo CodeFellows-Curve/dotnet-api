@@ -7,14 +7,14 @@
 
 ### Contributors
 <details>
-  <summary><b>Integrations Team Liasons</b></summary>
+  <summary><b>Integrations Team Liaisons</b></summary>
   <ul>
-    <li>Jason Burns, Auth Liason (https://github.com/jasonb315)</li>
-    <li>Andrew Curtis, GraphQL Liason (https://github.com/amjcurtis)</li>
+    <li>Jason Burns, Authentication Liaison (https://github.com/jasonb315)</li>
+    <li>Andrew Curtis, GraphQL API Liaison (https://github.com/amjcurtis)</li>
   </ul>
 </details>
 <details>
-  <summary><b>Auth Team</b></summary>
+  <summary><b>Authentication Team</b></summary>
   <ul>
     <li>Tanner Percival, Lead Developer (https://github.com/Tanner253)</li>
     <li>Andrew Roska, Developer (https://github.com/Roketsu86)</li>
@@ -31,48 +31,49 @@
   </ul>
 </details>
 
-#### Auth Team Goal
-Utilize OAuth for google and github through Auth0 (Library of OAuth providers) to quickly and seamlessly allow users to register and use the site as inteded. a couple of things to keep in mind about Auth0 is that there is a default and mandatory 
-timeout for the access token where a new one is generated on login or register. this means that the access token is not persistant and becomes very difficult to validate.
+#### Authentication Team Goal
+Utilize OAuth for Google and GitHub through Auth0 (Library of OAuth providers) to quickly and seamlessly allow users to register and use the site as intended. Note that with Auth0 there is a default and mandatory 
+timeout for the access token where a new one is generated on login or register. This means that the access token is not persistant and so is challenging to validate.
 
 #### GraphQL Team Goal
-Build a responsive GraphQL endpoing that has the ability to perform full CRUD operations with an attached database to store periodic review information based on the list of core competencies. As well as the ability to post comments for any given section of a review.
+Build a responsive GraphQL API endpoint that has the ability to perform full CRUD operations with an attached database for storing professional competency reviews and comments based on the list of core competencies.
 
 ## Repo Purpose
 
-Authentication, GraphQL, and Database code for the backend portion of the Curve prototype.
+Authentication and GraphQL API server, and database code for the back-end portion of the Curve app prototype.
 
 ## Client Requirements
 
 Use Auth0
 Use GraphQL
-Use multiple roles
-maximize security
+Utilize multiple user roles
+Maximize security
 
 ## Deployment Link
 
-The deployed API can be hit from [This](https://cfcurve.azurewebsites.net/graphql) location.
-
+The API is deployed on Azure: https://cfcurve.azurewebsites.net/graphql
 
 ## Frameworks and Tools Used
 
-.NET Core 
-GraphQL (API Endpoint Management)
+ASP.NET Core 
+GraphQL
 JWT
 Auth0
-EntityFramework (SQL Management)
+Entity Framework
+SQL Server
+Swagger docs
 
-#### And Rational for that choice
+#### Rationale for For Tool/Technology Choice
 
-The reason we chose to use Auth0 was because the client wanted the ability to OAuth with multiple different services, and Auth0 handles the requests and responses of verification 
-securely. We are utilizing a controller to handle the actions to and from Auth0 and a model to store the proper data to verify the user.
+We chose to use Auth0 was because the client wanted the app to implement OAuth to allow multiple login services, and Auth0 handles the requests and responses of verification 
+securely. We utilize a controller to handle the actions to and from Auth0 and a model to store the proper data to authenticate the user.
 
 GraphQL was chosen for use in building the API because it was a hard requirement of the client. It was decided this would be used by the client because it allows dynamic and quick loading of data from the database that isn't restricted to a specific shape or type.
 
 ## Getting Started
 Clone this repository to your local machine.
 ```
-$ git clone [https://github.com]
+$ git clone https://github.com/CodeFellows-Curve/dotnet-api.git
 ```
 #### To run the program from Visual Studio:
 1. Select ```File``` -> ```Open``` -> ```Project/Solution```
@@ -94,7 +95,6 @@ $ git clone [https://github.com]
 
 ## UML
 
-
 #### Backend UML
 ![Backend UML](./assets/BackendUML.png)
 
@@ -102,63 +102,63 @@ $ git clone [https://github.com]
 #### 5-Way Handshake UML
 ![5-Way Handshake](https://github.com/CodeFellows-Curve/dotnet-api/blob/pre-staging/assets/5wayhandshakeuml.png)
 
-
 ## Process flow
 
 #### Auth Team
-9 AM : Meet up and deligate work for the day 
-10 AM: Team meeting (usually resulted in a pivot)
-11  PM: Stand up and sync (soetimes a pivot)
-4 PM : Stand up to sync with the other teams
+0900-0915: Debrief, assign work for the day 
+1000-1015: Meeting of all Curve project teams and clients
+1100-1115: Standup meeting to sync with project manager and Integrations team
+1600-1630 PM : Standup to sync and do daily retro
 
 <details>
   <summary><b>GraphQL Team Schedule</b></summary>
     <ul>
-      <li>0900-1030: Meet up for internal team plan of the day.</li>
-      <li>1030-1100: Standup meeting.</li>
+      <li>0900-0915: Meet up for internal team plan of the day.</li>
+      <li>1030-1045: Standup meeting.</li>
       <li>1100-1130: Team leadership meeting.</li>
-      <li>1145-1300: Break for lunch as needed.</li>
+      <li>1200-1300: Break for lunch as needed.</li>
       <li>1300-1600: Work with other teams.</li>
       <li>1600-1630: Standup meeting.</li>
       <li>1630-1700: Work with other teams.</li>
       <li>1700-1730: Scrum of Scrums.</li>
-      <li>1730-1800: End of day meet up.</li>
+      <li>1730-1800: End of day wrap up work.</li>
   </ul>
 </details>
 
 ## Current functionality
 
-The current functionality is that the front end will handle the retriveal of the token and the authentication of a user.
+The front end handles retrieval of the token and the authentication of a user.
 
 #### GraphQL
-The GraphQL endpoint can currently receive queries to GET data and send data as requested. It can also be used to put data into and edit data inside the database.
+
+The GraphQL endpoint can currently receive queries to GET, POST, and PUT data as requested.
 
 ## Known bugs 
 
 #### Existing limitations, etc
-Cannot send user information over http requests (security vulnerability)
-- CANNOT use graphQL and a form of authentication through auth0
-- MUST validate access token with Auth0 for a x amount of time. reoccurring, every request is different token - no persistence == the idea of renewing the token often increases security immensely
-
+* Cannot send user information over http requests (security vulnerability)
+* CANNOT use GraphQL and a form of authentication through Auth0
+* MUST validate access token with Auth0 at frequent intervals due to automatic token timeout. Every request generates a different token, so persistence is difficult to manage, though the necessity of renewing the token so often does offer a security advantage.
 
 ## Tasks remaining 
 
-Adding more roles to facilitate more or less accessibility per user.
-If we were not using GraphQL or this project was in one repo most of the issues are solved
+* Adding more roles to facilitate more or less accessibility per user.
+* If we were not using GraphQL or this project was in one repo most of the issues would be solved more easily.
 
 #### TODOs
 
-increase security for authorization for the data retrieval for the front end
+Increase security for authorization for the data access from the front end
 
 ##### GraphQL Team
-* Implement a return for delete functionality to prevent errors in GraphiQL and verify delete was properly completed.
-* More in depth testing of GraphQL Endpoint
-* Build Side-by-side Rest API?
+
+* Implement a return for delete functionality to prevent errors in GraphiQL and verify delete is properly completed
+* More in-depth testing of GraphQL endpoint
+* Build side-by-side REST API?
 * Implement more policy controls and security
 
-## Recomendations for future development
+## Recommendations for future development
 
-look into GraphQL Resource #2, heavily.
+Look into GraphQL Resource #2 thoroughly (see below).
 
 ## Docs Referenced (links)
 
@@ -173,7 +173,7 @@ look into GraphQL Resource #2, heavily.
 -->
 ***
 
-# RAW DOCUMENTATION PLEASE READ!
+# RAW DOCUMENTATION FOR AUTH - PLEASE READ!
 https://github.com/CodeFellows-Curve/dotnet-api/blob/pre-staging/curve-api/curve-api/README-Auth.md
 
 
